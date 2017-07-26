@@ -1,0 +1,172 @@
+---
+# Variables here are applicable to all host groups
+
+#httpd_port: 80
+#ntpserver: 192.168.1.2
+
+# AWS specific variables
+# Keys are in ansible vault protected file aws_vars_jdd
+ec2_access_key: "{{ my_access_key }}"
+ec2_secret_key: "{{ my_secret_key }}"
+ec2_region: us-east-2
+#ec2_zone:
+
+# Regions:
+# US N. Virginia: us-east-1
+# US Ohio: us-east-2
+# US N. California: us-west-1
+# US Oregon: us-west-2
+# CA Canada (central): ca-central-1
+# EU Ireland: eu-west-1
+# EU Frankfurt: eu-central-1
+# EU London: eu-west-2
+# AP Singapore: ap-southeast-1
+# AP Sydney: ap-southeast-2
+# AP Seoul: ap-northeast-2
+# AP Tokyo: ap-northeast-1
+# AP Mumbai: ap-south-1
+# SA Sao Paolo: sa-east-1
+
+
+
+# Regions for each NDN Testbed node
+
+# South American:
+ec2_region_ufpa: sa-east-1
+
+# Europe
+# Switzerland:
+ec2_region_basel: eu-central-1
+ec2_region_bern: eu-central-1
+
+# Germany
+ec2_region_goettingen: eu-central-1
+
+# Spain
+ec2_region_urjc: eu-central-1
+
+# France
+ec2_region_systemx: eu-west-2
+ec2_region_lip6: eu-west-2
+
+# Italy
+ec2_region_afa: eu-central-1
+ec2_region_padua: eu-central-1
+
+# Netherlands
+ec2_region_tno: eu-west-2
+
+# Norway
+ec2_region_ntnu: eu-west-2
+
+# Portugal
+ec2_region_copelabs: eu-central-1
+ec2_region_minho: eu-central-1
+
+# China
+ec2_region_cnic: ap-northeast-1
+ec2_region_bupt: ap-northeast-1
+ec2_region_pkusz: ap-northeast-1
+ec2_region_tongji: ap-northeast-1
+
+# Japan
+ec2_region_waseda: ap-northeast-1
+ec2_region_osaka: ap-northeast-1
+
+# Korea
+ec2_region_kisti: ap-northeast-2
+ec2_region_anyang: ap-northeast-2
+
+# Thailand
+ec2_region_msu: ap-southeast-1
+ec2_region_srru: ap-southeast-1
+
+# Indonesia
+ec2_region_indonesia: ap-southeast-1
+
+# USA
+ec2_region_wu: us-east-1
+ec2_region_memphis: us-east-2
+ec2_region_arizona: us-west-1
+ec2_region_byu: us-west-1
+ec2_region_csu: us-west-1
+ec2_region_uiuc: us-east-2
+ec2_region_neu: us-east-1
+ec2_region_uci: us-west-1
+ec2_region_ucla: us-west-1
+ec2_region_remap: us-west-1
+ec2_region_michigan: us-east-2
+ec2_region_caida: us-west-1
+ec2_region_nist: us-east-1
+
+# Ubuntu 16.04:
+#ec2_image: ami-8b92b4ee
+
+
+# US Ohio: us-east-2
+## Ohio.14.04
+#ec2_image: ami-019abc64
+#ec2_region: us-east-2
+ec2_image_memphis: ami-019abc64
+
+# US N. Virginia: us-east-1
+## N.Virginia.14.04
+#ec2_image: ami-4b133c5d
+#ec2_region: us-east-1
+ec2_image_wu: ami-4b133c5d
+
+# US N. California: us-west-1
+## N.California.14.04
+#ec2_image: ami-89f3dee9
+#ec2_region: us-west-1
+
+# US Oregon: us-west-2
+## Oregon.14.04
+#ec2_image: ami-d94f5aa0
+#ec2_region: us-west-2
+
+# SA Sao Paolo: sa-east-1
+## sa-east-1 14.04
+# ec2_image: ami-d1a7ccbd
+ec2_image_ufpa: ami-d1a7ccbd
+
+# CA Canada (central): ca-central-1
+# ec2_image: ami-beea56da
+
+# EU Ireland: eu-west-1
+# ec2_image: ami-d37961b5
+
+# EU Frankfurt: eu-central-1
+# ec2_image: ami-344fe85b
+
+# EU London: eu-west-2
+# ec2_image: ami-d67c6ab2
+
+# AP Singapore: ap-southeast-1
+# ec2_image: ami-5d72ff3e
+
+# AP Sydney: ap-southeast-2
+# ec2_image: ami-21766642
+
+# AP Seoul: ap-northeast-2
+# ec2_image: ami-3fca1551
+
+# AP Tokyo: ap-northeast-1
+# ec2_image: ami-8c4055eb
+
+# AP Mumbai: ap-south-1
+# ec2_image: ami-23daa54c
+
+
+ec2_instance_type: t2.micro
+ec2_keypair: aws_wu_jdd
+ec2_security_group: ndn-clients
+#ec2_security_group: default
+ec2_host_count: 1
+ec2_tag: ndn-clients-WU
+ec2_tag_name_prefix: jdd
+ec2_hosts: all
+wait_for_port: 22
+
+## This user name will be set by Tower, when run through Tower
+local_user_name: jdd

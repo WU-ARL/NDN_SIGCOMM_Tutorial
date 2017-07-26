@@ -1,0 +1,21 @@
+---
+ansible_host2: 
+default_prefix: /ndn/edu/colostate 
+ansible_user: ubuntu
+
+## Oregon
+#ansible_host:  52.40.146.2
+#ndn_rtr_address:  52.40.146.2
+
+## N.California
+#ansible_host:  54.183.152.200
+#ndn_rtr_address:  54.183.152.200
+
+# Ohio
+ansible_host:  54.148.211.26
+ndn_rtr_address:  54.148.211.26
+
+## N.Virginia
+#ansible_host:  107.21.69.220
+#ndn_rtr_address:  107.21.69.220
+

@@ -1,0 +1,6 @@
+---
+default_prefix: /ndn/edu/wustl 
+ansible_host: 52.15.190.156
+ansible_user: ubuntu
+ndn_rtr_address: 52.15.190.156
+

@@ -1,0 +1,64 @@
+---
+# Provision instances in AWS specific to the LAMP HA Proxy demo
+- name: Provision instances in AWS
+  hosts: localhost
+  connection: local
+  gather_facts: False
+
+  # load AWS variables from this group vars file
+  vars_files:
+  - group_vars/aws_vars_jdd
+  - group_vars/all
+
+  tasks:
+  # Launch End Hosts for each NDN Testbed gateway node
+  - name: Launch end host for WU
+    ec2:
+      access_key: "{{ ec2_access_key }}"
+      secret_key: "{{ ec2_secret_key }}"
+      keypair: "{{ ec2_keypair }}"
+      group: "{{ ec2_security_group }}"
+      type: "{{ ec2_instance_type }}"
+      image: "{{ ec2_image_wu }}"
+      region: "{{ ec2_region_wu }}"
+      instance_tags: "{'ansible_group':'wu_host', 'type':'{{ ec2_instance_type }}', 'group':'{{ ec2_security_group }}', 'Name':'wu_host_''{{ local_user_name }}'}"
+      count: "{{ ec2_host_count }}"
+      wait: true
+    register: ec2
+
+  - name: Launch end host for MEMPHIS
+    ec2:
+      access_key: "{{ ec2_access_key }}"
+      secret_key: "{{ ec2_secret_key }}"
+      keypair: "{{ ec2_keypair }}"
+      group: "{{ ec2_security_group }}"
+      type: "{{ ec2_instance_type }}"
+      image: "{{ ec2_image_memphis }}"
+      region: "{{ ec2_region_memphis }}"
+      instance_tags: "{'ansible_group':'memphis_host', 'type':'{{ ec2_instance_type }}', 'group':'{{ ec2_security_group }}', 'Name':'memphis_host_''{{ local_user_name }}'}"
+      count: "{{ ec2_host_count }}"
+      wait: true
+    register: ec2
+
+  - name: Launch end host for UFPA
+    ec2:
+      access_key: "{{ ec2_access_key }}"
+      secret_key: "{{ ec2_secret_key }}"
+      keypair: "{{ ec2_keypair }}"
+      group: "{{ ec2_security_group }}"
+      type: "{{ ec2_instance_type }}"
+      image: "{{ ec2_image_ufpa }}"
+      region: "{{ ec2_region_ufpa }}"
+      instance_tags: "{'ansible_group':'ufpa_host', 'type':'{{ ec2_instance_type }}', 'group':'{{ ec2_security_group }}', 'Name':'ufpa_host_''{{ local_user_name }}'}"
+      count: "{{ ec2_host_count }}"
+      wait: true
+    register: ec2
+
+  - name: Wait for SSH to come up
+    wait_for:
+      host: "{{ item.public_dns_name }}"
+      port: 22
+      delay: 60
+      timeout: 320
+      state: started
+    with_items: "{{ ec2.instances }}"

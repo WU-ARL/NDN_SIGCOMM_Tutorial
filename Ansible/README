@@ -1,0 +1,11 @@
+
+This set of playbooks uses Dynamic Inventory. The hosts to be
+used are generated in AWS and launched on the fly using the launch.yml playbook. 
+The ec2.py script takes care of providing a host inventory to the configure.yml playbook.
+
+The two commands to do this are:
+
+ansible-playbook --ask-vault-pass launch.yml
+
+ansible-playbook -u ubuntu --ssh-extra-args="-i ~/.ssh/aws_wu_jdd.pem -o \"StrictHostKeyChecking no\"" --ask-vault-pass -i ec2.py configure.yml
+

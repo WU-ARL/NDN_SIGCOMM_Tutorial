@@ -1,0 +1,110 @@
+---
+# tasks file for ndnrtc
+- name: create ndnrtc directory
+  file: path=/home/ubuntu/ndnrtc state=directory owner=ubuntu group=ubuntu mode=755
+
+# mk directory ndnrtc in home dir of Hosts
+# files to copy over to all hosts: libconfig++.so.9  libndn-cpp.so.0  ndnrtc-client  rule.conf  setupHost.sh  
+# files to copy over to all hosts : test-source-320x240.argb.tar.gz  producer.cfg
+# copy all files to all hosts to expand testing
+
+
+- name: copy libconfig
+  copy: dest=/usr/lib/x86_64-linux-gnu/libconfig++.so.9 src=roles/ndnrtc/files/libconfig++.so.9 owner=root group=root mode=644
+  become: yes
+
+- name: copy libndn-cpp
+  copy: dest=/usr/lib/x86_64-linux-gnu/libndn-cpp.so.0 src=roles/ndnrtc/files/libndn-cpp.so.0  owner=root group=root mode=644
+  become: yes
+
+- name: copy ndnrtc-client
+  copy: dest=/home/ubuntu/ndnrtc/ndnrtc-client  src=roles/ndnrtc/files/ndnrtc-client  owner=ubuntu group=ubuntu mode=755
+
+- name: copy rule.conf
+  copy: dest=/home/ubuntu/ndnrtc/rule.conf  src=roles/ndnrtc/files/rule.conf  owner=ubuntu group=ubuntu mode=644
+
+- name: copy setupHost.sh
+  copy: dest=/home/ubuntu/ndnrtc/setupHost.sh  src=roles/ndnrtc/files/setupHost.sh  owner=ubuntu group=ubuntu mode=755
+
+- name: copy runProducerAtWU.sh
+  copy: dest=/home/ubuntu/ndnrtc/runProducerAtWU.sh  src=roles/ndnrtc/files/runProducerAtWU.sh  owner=ubuntu group=ubuntu mode=755
+
+- name: copy runProducerAtCSU.sh
+  copy: dest=/home/ubuntu/ndnrtc/runProducerAtCSU.sh  src=roles/ndnrtc/files/runProducerAtCSU.sh  owner=ubuntu group=ubuntu mode=755
+
+- name: copy runProducerAtCSU_with_ndndump.sh
+  copy: dest=/home/ubuntu/ndnrtc/runProducerAtCSU_with_ndndump.sh  src=roles/ndnrtc/files/runProducerAtCSU_with_ndndump.sh  owner=ubuntu group=ubuntu mode=755
+
+- name: copy runProducerAtMEMPHIS.sh
+  copy: dest=/home/ubuntu/ndnrtc/runProducerAtMEMPHIS.sh  src=roles/ndnrtc/files/runProducerAtMEMPHIS.sh  owner=ubuntu group=ubuntu mode=755
+
+- name: copy runProducerAtARIZONA.sh
+  copy: dest=/home/ubuntu/ndnrtc/runProducerAtARIZONA.sh  src=roles/ndnrtc/files/runProducerAtARIZONA.sh  owner=ubuntu group=ubuntu mode=755
+
+- name: copy runConsumer_Arizona_of_Arizona.sh
+  copy: dest=/home/ubuntu/ndnrtc/runConsumer_Arizona_of_Arizona.sh  src=roles/ndnrtc/files/runConsumer_Arizona_of_Arizona.sh  owner=ubuntu group=ubuntu mode=755
+
+- name: copy runConsumer_CSU_of_CSU.sh
+  copy: dest=/home/ubuntu/ndnrtc/runConsumer_CSU_of_CSU.sh  src=roles/ndnrtc/files/runConsumer_CSU_of_CSU.sh  owner=ubuntu group=ubuntu mode=755
+
+- name: copy runConsumer_CSU_of_CSU_with_ndndump.sh
+  copy: dest=/home/ubuntu/ndnrtc/runConsumer_CSU_of_CSU_with_ndndump.sh  src=roles/ndnrtc/files/runConsumer_CSU_of_CSU_with_ndndump.sh  owner=ubuntu group=ubuntu mode=755
+
+- name: copy runConsumer_Memphis_of_Memphis.sh
+  copy: dest=/home/ubuntu/ndnrtc/runConsumer_Memphis_of_Memphis.sh  src=roles/ndnrtc/files/runConsumer_Memphis_of_Memphis.sh  owner=ubuntu group=ubuntu mode=755
+
+- name: copy runConsumer_WU_of_WU.sh
+  copy: dest=/home/ubuntu/ndnrtc/runConsumer_WU_of_WU.sh  src=roles/ndnrtc/files/runConsumer_WU_of_WU.sh  owner=ubuntu group=ubuntu mode=755
+
+- name: copy runConsumerAtCSU.sh
+  copy: dest=/home/ubuntu/ndnrtc/runConsumerAtCSU.sh  src=roles/ndnrtc/files/runConsumerAtCSU.sh  owner=ubuntu group=ubuntu mode=755
+
+- name: copy startNFD_WU.sh
+  copy: dest=/home/ubuntu/ndnrtc/startNFD_WU.sh  src=roles/ndnrtc/files/startNFD_WU.sh  owner=ubuntu group=ubuntu mode=755
+
+- name: copy startNFD_CSU.sh
+  copy: dest=/home/ubuntu/ndnrtc/startNFD_CSU.sh  src=roles/ndnrtc/files/startNFD_CSU.sh  owner=ubuntu group=ubuntu mode=755
+
+- name: copy startNFD_ARIZONA.sh
+  copy: dest=/home/ubuntu/ndnrtc/startNFD_ARIZONA.sh  src=roles/ndnrtc/files/startNFD_ARIZONA.sh  owner=ubuntu group=ubuntu mode=755
+
+- name: copy startNFD_MEMPHIS.sh
+  copy: dest=/home/ubuntu/ndnrtc/startNFD_MEMPHIS.sh  src=roles/ndnrtc/files/startNFD_MEMPHIS.sh  owner=ubuntu group=ubuntu mode=755
+
+- name: copy test-source-320x240.argb.tar.gz
+  copy: dest=/home/ubuntu/ndnrtc/test-source-320x240.argb.tar.gz src=roles/ndnrtc/files/test-source-320x240.argb.tar.gz owner=ubuntu group=ubuntu mode=644
+
+- name: copy producer.cfg
+  copy: dest=/home/ubuntu/ndnrtc/producer.cfg  src=roles/ndnrtc/files/producer.cfg  owner=ubuntu group=ubuntu mode=644
+
+- name: copy arizona_consumer_of_arizona.cfg
+  copy: dest=/home/ubuntu/ndnrtc/arizona_consumer_of_arizona.cfg  src=roles/ndnrtc/files/arizona_consumer_of_arizona.cfg  owner=ubuntu group=ubuntu mode=644
+
+- name: copy memphis_consumer_of_memphis.cfg
+  copy: dest=/home/ubuntu/ndnrtc/memphis_consumer_of_memphis.cfg  src=roles/ndnrtc/files/memphis_consumer_of_memphis.cfg  owner=ubuntu group=ubuntu mode=644
+
+- name: copy csu_consumer_of_csu.cfg
+  copy: dest=/home/ubuntu/ndnrtc/csu_consumer_of_csu.cfg  src=roles/ndnrtc/files/csu_consumer_of_csu.cfg  owner=ubuntu group=ubuntu mode=644
+
+- name: copy wu_consumer_of_wu.cfg
+  copy: dest=/home/ubuntu/ndnrtc/wu_consumer_of_wu.cfg  src=roles/ndnrtc/files/wu_consumer_of_wu.cfg  owner=ubuntu group=ubuntu mode=644
+
+- name: copy certHostArizona.sh
+  copy: dest=/home/ubuntu/ndnrtc/certHostArizona.sh  src=roles/ndnrtc/files/certHostArizona.sh  owner=ubuntu group=ubuntu mode=755
+
+- name: copy certHostCSU.sh
+  copy: dest=/home/ubuntu/ndnrtc/certHostCSU.sh  src=roles/ndnrtc/files/certHostCSU.sh  owner=ubuntu group=ubuntu mode=755
+
+- name: copy certHostMemphis.sh
+  copy: dest=/home/ubuntu/ndnrtc/certHostMemphis.sh  src=roles/ndnrtc/files/certHostMemphis.sh  owner=ubuntu group=ubuntu mode=755
+
+- name: copy certHostWU.sh
+  copy: dest=/home/ubuntu/ndnrtc/certHostWU.sh  src=roles/ndnrtc/files/certHostWU.sh  owner=ubuntu group=ubuntu mode=755
+
+#- name: create certHost.sh
+#  template: src=certHost.sh.j2 dest=/home/ubuntu/ndnrtc/certHost.sh owner=ubuntu group=ubuntu mode=755
+
+#- name: create consumer-of-wu.cfg
+#  template: src=consumer-of-wu.cfg.j2 dest=/home/ubuntu/ndnrtc/consumer-of-wu.cfg owner=ubuntu group=ubuntu mode=644
+
+

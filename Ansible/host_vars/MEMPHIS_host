@@ -1,0 +1,5 @@
+---
+default_prefix: /ndn/edu/memphis 
+ansible_host: 13.59.196.49
+ansible_user: ubuntu
+ndn_rtr_address: 13.59.196.49
