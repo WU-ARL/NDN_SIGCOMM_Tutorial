@@ -221,7 +221,7 @@ ec2_host_gw_prefix_ntnu: /ndn/no/ntnu
 ec2_host_gw_prefix_osaka: /ndn/jp/ac/osaka-u
 ec2_host_gw_prefix_padua: /ndn/it/unipd
 ec2_host_gw_prefix_pkusz: /ndn/cn/edu/pkusz
-ec2_host_gw_prefix_rempa: /ndn/edu/ucla/remap
+ec2_host_gw_prefix_remap: /ndn/edu/ucla/remap
 ec2_host_gw_prefix_srru: /ndn/th/ac/srru
 ec2_host_gw_prefix_systemx: /ndn/fr/irt-systemx
 ec2_host_gw_prefix_tno: /ndn/nl/tno

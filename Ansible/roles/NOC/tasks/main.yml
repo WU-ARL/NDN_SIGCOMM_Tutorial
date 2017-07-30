@@ -47,34 +47,34 @@
 #- cron: name="parallel ndn ping test" user="ndnops" state=present disabled=yes minute="15" job="cd /home/ndnops/ndn-ops/NOC/ping_delay_tests; ./getTestbedDelays_ndnping_parallel.sh -c 300 -n {{ inventory_hostname }} "
 #
 # Download and install EPEL for Centos/RHEL version 7
-- name: Download EPEL Repo - Centos/RHEL 7
-  get_url: url=http://dl.fedoraproject.org/pub/epel/epel-release-latest-7.noarch.rpm dest=/tmp/epel-release-latest-7.noarch.rpm
-  when: "ansible_os_family == 'RedHat' and ansible_distribution_major_version == '7'"
-
-- name: Install EPEL Repo - Centos/RHEL 7
-  command: rpm -ivh /tmp/epel-release-latest-7.noarch.rpm creates=/etc/yum.repos.d/epel.repo
-  when: "ansible_os_family == 'RedHat' and ansible_distribution_major_version == '7'"
-
-- name: install general RedHat packages 
-  when: ansible_distribution == "RedHat" 
-  action: >
-       {{ ansible_pkg_mgr }} name={{ item }} state=latest update_cache=yes
-  with_items:
-       - net-tools
-       - tcpdump
-       - rpm-build
-       - apr-devel
-       - wget
-       - python-devel
-       - bzip2-devel
-       - fail2ban
-       - sqlite-devel
-       - openssl
-       - openssl-devel
-       - protobuf
-       - protobuf-compiler
-       - protobuf-devel
-       - log4cxx.x86_64
+#- name: Download EPEL Repo - Centos/RHEL 7
+#  get_url: url=http://dl.fedoraproject.org/pub/epel/epel-release-latest-7.noarch.rpm dest=/tmp/epel-release-latest-7.noarch.rpm
+#  when: "ansible_os_family == 'RedHat' and ansible_distribution_major_version == '7'"
+#
+#- name: Install EPEL Repo - Centos/RHEL 7
+#  command: rpm -ivh /tmp/epel-release-latest-7.noarch.rpm creates=/etc/yum.repos.d/epel.repo
+#  when: "ansible_os_family == 'RedHat' and ansible_distribution_major_version == '7'"
+#
+#- name: install general RedHat packages 
+#  when: ansible_distribution == "RedHat" 
+#  action: >
+#       {{ ansible_pkg_mgr }} name={{ item }} state=latest update_cache=yes
+#  with_items:
+#       - net-tools
+#       - tcpdump
+#       - rpm-build
+#       - apr-devel
+#       - wget
+#       - python-devel
+#       - bzip2-devel
+#       - fail2ban
+#       - sqlite-devel
+#       - openssl
+#       - openssl-devel
+#       - protobuf
+#       - protobuf-compiler
+#       - protobuf-devel
+#       - log4cxx.x86_64
 
 - name: add ndn repository
   apt_repository: repo='ppa:named-data/ppa' state=present
