@@ -89,20 +89,20 @@
 - name: copy wu_consumer_of_wu.cfg
   copy: dest=/home/ubuntu/ndnrtc/wu_consumer_of_wu.cfg  src=roles/ndnrtc/files/wu_consumer_of_wu.cfg  owner=ubuntu group=ubuntu mode=644
 
-- name: copy certHostArizona.sh
-  copy: dest=/home/ubuntu/ndnrtc/certHostArizona.sh  src=roles/ndnrtc/files/certHostArizona.sh  owner=ubuntu group=ubuntu mode=755
+#- name: copy certHostArizona.sh
+#  copy: dest=/home/ubuntu/ndnrtc/certHostArizona.sh  src=roles/ndnrtc/files/certHostArizona.sh  owner=ubuntu group=ubuntu mode=755
+#
+#- name: copy certHostCSU.sh
+#  copy: dest=/home/ubuntu/ndnrtc/certHostCSU.sh  src=roles/ndnrtc/files/certHostCSU.sh  owner=ubuntu group=ubuntu mode=755
+#
+#- name: copy certHostMemphis.sh
+#  copy: dest=/home/ubuntu/ndnrtc/certHostMemphis.sh  src=roles/ndnrtc/files/certHostMemphis.sh  owner=ubuntu group=ubuntu mode=755
+#
+#- name: copy certHostWU.sh
+#  copy: dest=/home/ubuntu/ndnrtc/certHostWU.sh  src=roles/ndnrtc/files/certHostWU.sh  owner=ubuntu group=ubuntu mode=755
 
-- name: copy certHostCSU.sh
-  copy: dest=/home/ubuntu/ndnrtc/certHostCSU.sh  src=roles/ndnrtc/files/certHostCSU.sh  owner=ubuntu group=ubuntu mode=755
-
-- name: copy certHostMemphis.sh
-  copy: dest=/home/ubuntu/ndnrtc/certHostMemphis.sh  src=roles/ndnrtc/files/certHostMemphis.sh  owner=ubuntu group=ubuntu mode=755
-
-- name: copy certHostWU.sh
-  copy: dest=/home/ubuntu/ndnrtc/certHostWU.sh  src=roles/ndnrtc/files/certHostWU.sh  owner=ubuntu group=ubuntu mode=755
-
-#- name: create certHost.sh
-#  template: src=certHost.sh.j2 dest=/home/ubuntu/ndnrtc/certHost.sh owner=ubuntu group=ubuntu mode=755
+- name: create certHost.sh
+  template: src=certHost.sh.j2 dest=/home/ubuntu/ndnrtc/certHost.sh owner=ubuntu group=ubuntu mode=755
 
 #- name: create consumer-of-wu.cfg
 #  template: src=consumer-of-wu.cfg.j2 dest=/home/ubuntu/ndnrtc/consumer-of-wu.cfg owner=ubuntu group=ubuntu mode=644

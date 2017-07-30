@@ -22,7 +22,7 @@
       type: "{{ ec2_instance_type }}"
       image: "{{ ec2_image_arizona }}"
       region: "{{ ec2_region_arizona }}"
-      instance_tags: "{'ansible_group':'arizona_host', 'type':'{{ ec2_instance_type }}', 'group':'{{ ec2_security_group }}', 'Name':'arizona_host_''{{ local_user_name }}'}"
+      instance_tags: "{'host_gw':'{{ ec2_host_gw_arizona }}' ,'host_gw_prefix':'{{ ec2_host_gw_prefix_arizona }}' , 'ansible_group':'arizona_host', 'type':'{{ ec2_instance_type }}', 'group':'{{ ec2_security_group }}', 'Name':'arizona_host_''{{ local_user_name }}'}"
       count: "{{ ec2_host_count }}"
       wait: true
     register: ec2
@@ -36,7 +36,7 @@
       type: "{{ ec2_instance_type }}"
       image: "{{ ec2_image_byu }}"
       region: "{{ ec2_region_byu }}"
-      instance_tags: "{'ansible_group':'byu_host', 'type':'{{ ec2_instance_type }}', 'group':'{{ ec2_security_group }}', 'Name':'byu_host_''{{ local_user_name }}'}"
+      instance_tags: "{'host_gw':'{{ ec2_host_gw_byu }}' ,'host_gw_prefix':'{{ ec2_host_gw_prefix_byu }}' ,'ansible_group':'byu_host', 'type':'{{ ec2_instance_type }}', 'group':'{{ ec2_security_group }}', 'Name':'byu_host_''{{ local_user_name }}'}"
       count: "{{ ec2_host_count }}"
       wait: true
     register: ec2
@@ -50,7 +50,7 @@
       type: "{{ ec2_instance_type }}"
       image: "{{ ec2_image_csu }}"
       region: "{{ ec2_region_csu }}"
-      instance_tags: "{'ansible_group':'csu_host', 'type':'{{ ec2_instance_type }}', 'group':'{{ ec2_security_group }}', 'Name':'csu_host_''{{ local_user_name }}'}"
+      instance_tags: "{'host_gw':'{{ ec2_host_gw_csu }}' ,'host_gw_prefix':'{{ ec2_host_gw_prefix_csu }}' ,'ansible_group':'csu_host', 'type':'{{ ec2_instance_type }}', 'group':'{{ ec2_security_group }}', 'Name':'csu_host_''{{ local_user_name }}'}"
       count: "{{ ec2_host_count }}"
       wait: true
     register: ec2
@@ -64,7 +64,7 @@
       type: "{{ ec2_instance_type }}"
       image: "{{ ec2_image_uiuc }}"
       region: "{{ ec2_region_uiuc }}"
-      instance_tags: "{'ansible_group':'uiuc_host', 'type':'{{ ec2_instance_type }}', 'group':'{{ ec2_security_group }}', 'Name':'uiuc_host_''{{ local_user_name }}'}"
+      instance_tags: "{'host_gw':'{{ ec2_host_gw_uiuc }}' ,'host_gw_prefix':'{{ ec2_host_gw_prefix_uiuc }}' ,'ansible_group':'uiuc_host', 'type':'{{ ec2_instance_type }}', 'group':'{{ ec2_security_group }}', 'Name':'uiuc_host_''{{ local_user_name }}'}"
       count: "{{ ec2_host_count }}"
       wait: true
     register: ec2
@@ -78,7 +78,7 @@
       type: "{{ ec2_instance_type }}"
       image: "{{ ec2_image_memphis }}"
       region: "{{ ec2_region_memphis }}"
-      instance_tags: "{'ansible_group':'memphis_host', 'type':'{{ ec2_instance_type }}', 'group':'{{ ec2_security_group }}', 'Name':'memphis_host_''{{ local_user_name }}'}"
+      instance_tags: "{'host_gw':'{{ ec2_host_gw_memphis }}' ,'host_gw_prefix':'{{ ec2_host_gw_prefix_memphis }}' ,'ansible_group':'memphis_host', 'type':'{{ ec2_instance_type }}', 'group':'{{ ec2_security_group }}', 'Name':'memphis_host_''{{ local_user_name }}'}"
       count: "{{ ec2_host_count }}"
       wait: true
     register: ec2
@@ -92,7 +92,7 @@
       type: "{{ ec2_instance_type }}"
       image: "{{ ec2_image_neu }}"
       region: "{{ ec2_region_neu }}"
-      instance_tags: "{'ansible_group':'neu_host', 'type':'{{ ec2_instance_type }}', 'group':'{{ ec2_security_group }}', 'Name':'neu_host_''{{ local_user_name }}'}"
+      instance_tags: "{'host_gw':'{{ ec2_host_gw_neu }}' ,'host_gw_prefix':'{{ ec2_host_gw_prefix_neu }}' ,'ansible_group':'neu_host', 'type':'{{ ec2_instance_type }}', 'group':'{{ ec2_security_group }}', 'Name':'neu_host_''{{ local_user_name }}'}"
       count: "{{ ec2_host_count }}"
       wait: true
     register: ec2
@@ -106,7 +106,7 @@
       type: "{{ ec2_instance_type }}"
       image: "{{ ec2_image_uci }}"
       region: "{{ ec2_region_uci }}"
-      instance_tags: "{'ansible_group':'uci_host', 'type':'{{ ec2_instance_type }}', 'group':'{{ ec2_security_group }}', 'Name':'uci_host_''{{ local_user_name }}'}"
+      instance_tags: "{'host_gw':'{{ ec2_host_gw_uci }}' ,'host_gw_prefix':'{{ ec2_host_gw_prefix_uci }}' ,'ansible_group':'uci_host', 'type':'{{ ec2_instance_type }}', 'group':'{{ ec2_security_group }}', 'Name':'uci_host_''{{ local_user_name }}'}"
       count: "{{ ec2_host_count }}"
       wait: true
     register: ec2
@@ -120,7 +120,7 @@
       type: "{{ ec2_instance_type }}"
       image: "{{ ec2_image_ucla }}"
       region: "{{ ec2_region_ucla }}"
-      instance_tags: "{'ansible_group':'ucla_host', 'type':'{{ ec2_instance_type }}', 'group':'{{ ec2_security_group }}', 'Name':'ucla_host_''{{ local_user_name }}'}"
+      instance_tags: "{'host_gw':'{{ ec2_host_gw_ucla }}' ,'host_gw_prefix':'{{ ec2_host_gw_prefix_ucla }}' ,'ansible_group':'ucla_host', 'type':'{{ ec2_instance_type }}', 'group':'{{ ec2_security_group }}', 'Name':'ucla_host_''{{ local_user_name }}'}"
       count: "{{ ec2_host_count }}"
       wait: true
     register: ec2
@@ -134,7 +134,7 @@
       type: "{{ ec2_instance_type }}"
       image: "{{ ec2_image_remap }}"
       region: "{{ ec2_region_remap }}"
-      instance_tags: "{'ansible_group':'remap_host', 'type':'{{ ec2_instance_type }}', 'group':'{{ ec2_security_group }}', 'Name':'remap_host_''{{ local_user_name }}'}"
+      instance_tags: "{'host_gw':'{{ ec2_host_gw_remap }}' ,'host_gw_prefix':'{{ ec2_host_gw_prefix_remap }}' ,'ansible_group':'remap_host', 'type':'{{ ec2_instance_type }}', 'group':'{{ ec2_security_group }}', 'Name':'remap_host_''{{ local_user_name }}'}"
       count: "{{ ec2_host_count }}"
       wait: true
     register: ec2
@@ -148,7 +148,7 @@
       type: "{{ ec2_instance_type }}"
       image: "{{ ec2_image_michigan }}"
       region: "{{ ec2_region_michigan }}"
-      instance_tags: "{'ansible_group':'michigan_host', 'type':'{{ ec2_instance_type }}', 'group':'{{ ec2_security_group }}', 'Name':'michigan_host_''{{ local_user_name }}'}"
+      instance_tags: "{'host_gw':'{{ ec2_host_gw_michigan }}' ,'host_gw_prefix':'{{ ec2_host_gw_prefix_michigan }}' ,'ansible_group':'michigan_host', 'type':'{{ ec2_instance_type }}', 'group':'{{ ec2_security_group }}', 'Name':'michigan_host_''{{ local_user_name }}'}"
       count: "{{ ec2_host_count }}"
       wait: true
     register: ec2
@@ -162,7 +162,7 @@
       type: "{{ ec2_instance_type }}"
       image: "{{ ec2_image_wu }}"
       region: "{{ ec2_region_wu }}"
-      instance_tags: "{'ansible_group':'wu_host', 'type':'{{ ec2_instance_type }}', 'group':'{{ ec2_security_group }}', 'Name':'wu_host_''{{ local_user_name }}'}"
+      instance_tags: "{'host_gw':'{{ ec2_host_gw_wu }}' ,'host_gw_prefix':'{{ ec2_host_gw_prefix_wu }}' ,'ansible_group':'wu_host', 'type':'{{ ec2_instance_type }}', 'group':'{{ ec2_security_group }}', 'Name':'wu_host_''{{ local_user_name }}'}"
       count: "{{ ec2_host_count }}"
       wait: true
     register: ec2
@@ -176,7 +176,7 @@
       type: "{{ ec2_instance_type }}"
       image: "{{ ec2_image_nist }}"
       region: "{{ ec2_region_nist }}"
-      instance_tags: "{'ansible_group':'nist_host', 'type':'{{ ec2_instance_type }}', 'group':'{{ ec2_security_group }}', 'Name':'nist_host_''{{ local_user_name }}'}"
+      instance_tags: "{'host_gw':'{{ ec2_host_gw_nist }}' ,'host_gw_prefix':'{{ ec2_host_gw_prefix_nist }}' ,'ansible_group':'nist_host', 'type':'{{ ec2_instance_type }}', 'group':'{{ ec2_security_group }}', 'Name':'nist_host_''{{ local_user_name }}'}"
       count: "{{ ec2_host_count }}"
       wait: true
     register: ec2
@@ -190,7 +190,7 @@
       type: "{{ ec2_instance_type }}"
       image: "{{ ec2_image_caida }}"
       region: "{{ ec2_region_caida }}"
-      instance_tags: "{'ansible_group':'caida_host', 'type':'{{ ec2_instance_type }}', 'group':'{{ ec2_security_group }}', 'Name':'caida_host_''{{ local_user_name }}'}"
+      instance_tags: "{'host_gw':'{{ ec2_host_gw_caida }}' ,'host_gw_prefix':'{{ ec2_host_gw_prefix_caida }}' ,'ansible_group':'caida_host', 'type':'{{ ec2_instance_type }}', 'group':'{{ ec2_security_group }}', 'Name':'caida_host_''{{ local_user_name }}'}"
       count: "{{ ec2_host_count }}"
       wait: true
     register: ec2
@@ -204,7 +204,7 @@
       type: "{{ ec2_instance_type }}"
       image: "{{ ec2_image_ufpa }}"
       region: "{{ ec2_region_ufpa }}"
-      instance_tags: "{'ansible_group':'ufpa_host', 'type':'{{ ec2_instance_type }}', 'group':'{{ ec2_security_group }}', 'Name':'ufpa_host_''{{ local_user_name }}'}"
+      instance_tags: "{'host_gw':'{{ ec2_host_gw_ufpa }}' ,'host_gw_prefix':'{{ ec2_host_gw_prefix_ufpa }}' ,'ansible_group':'ufpa_host', 'type':'{{ ec2_instance_type }}', 'group':'{{ ec2_security_group }}', 'Name':'ufpa_host_''{{ local_user_name }}'}"
       count: "{{ ec2_host_count }}"
       wait: true
     register: ec2
@@ -218,7 +218,7 @@
       type: "{{ ec2_instance_type }}"
       image: "{{ ec2_image_basel }}"
       region: "{{ ec2_region_basel }}"
-      instance_tags: "{'ansible_group':'basel_host', 'type':'{{ ec2_instance_type }}', 'group':'{{ ec2_security_group }}', 'Name':'basel_host_''{{ local_user_name }}'}"
+      instance_tags: "{'host_gw':'{{ ec2_host_gw_basel }}' ,'host_gw_prefix':'{{ ec2_host_gw_prefix_basel }}' ,'ansible_group':'basel_host', 'type':'{{ ec2_instance_type }}', 'group':'{{ ec2_security_group }}', 'Name':'basel_host_''{{ local_user_name }}'}"
       count: "{{ ec2_host_count }}"
       wait: true
     register: ec2
@@ -232,7 +232,7 @@
       type: "{{ ec2_instance_type }}"
       image: "{{ ec2_image_bern }}"
       region: "{{ ec2_region_bern }}"
-      instance_tags: "{'ansible_group':'bern_host', 'type':'{{ ec2_instance_type }}', 'group':'{{ ec2_security_group }}', 'Name':'bern_host_''{{ local_user_name }}'}"
+      instance_tags: "{'host_gw':'{{ ec2_host_gw_bern }}' ,'host_gw_prefix':'{{ ec2_host_gw_prefix_bern }}' ,'ansible_group':'bern_host', 'type':'{{ ec2_instance_type }}', 'group':'{{ ec2_security_group }}', 'Name':'bern_host_''{{ local_user_name }}'}"
       count: "{{ ec2_host_count }}"
       wait: true
     register: ec2
@@ -246,7 +246,7 @@
       type: "{{ ec2_instance_type }}"
       image: "{{ ec2_image_goettingen }}"
       region: "{{ ec2_region_goettingen }}"
-      instance_tags: "{'ansible_group':'goettingen_host', 'type':'{{ ec2_instance_type }}', 'group':'{{ ec2_security_group }}', 'Name':'goettingen_host_''{{ local_user_name }}'}"
+      instance_tags: "{'host_gw':'{{ ec2_host_gw_goettingen }}' ,'host_gw_prefix':'{{ ec2_host_gw_prefix_goettingen }}' ,'ansible_group':'goettingen_host', 'type':'{{ ec2_instance_type }}', 'group':'{{ ec2_security_group }}', 'Name':'goettingen_host_''{{ local_user_name }}'}"
       count: "{{ ec2_host_count }}"
       wait: true
     register: ec2
@@ -260,7 +260,7 @@
       type: "{{ ec2_instance_type }}"
       image: "{{ ec2_image_urjc }}"
       region: "{{ ec2_region_urjc }}"
-      instance_tags: "{'ansible_group':'urjc_host', 'type':'{{ ec2_instance_type }}', 'group':'{{ ec2_security_group }}', 'Name':'urjc_host_''{{ local_user_name }}'}"
+      instance_tags: "{'host_gw':'{{ ec2_host_gw_urjc }}' ,'host_gw_prefix':'{{ ec2_host_gw_prefix_urjc }}' ,'ansible_group':'urjc_host', 'type':'{{ ec2_instance_type }}', 'group':'{{ ec2_security_group }}', 'Name':'urjc_host_''{{ local_user_name }}'}"
       count: "{{ ec2_host_count }}"
       wait: true
     register: ec2
@@ -274,7 +274,7 @@
       type: "{{ ec2_instance_type }}"
       image: "{{ ec2_image_afa }}"
       region: "{{ ec2_region_afa }}"
-      instance_tags: "{'ansible_group':'afa_host', 'type':'{{ ec2_instance_type }}', 'group':'{{ ec2_security_group }}', 'Name':'afa_host_''{{ local_user_name }}'}"
+      instance_tags: "{'host_gw':'{{ ec2_host_gw_afa }}' ,'host_gw_prefix':'{{ ec2_host_gw_prefix_afa }}' ,'ansible_group':'afa_host', 'type':'{{ ec2_instance_type }}', 'group':'{{ ec2_security_group }}', 'Name':'afa_host_''{{ local_user_name }}'}"
       count: "{{ ec2_host_count }}"
       wait: true
     register: ec2
@@ -288,7 +288,7 @@
       type: "{{ ec2_instance_type }}"
       image: "{{ ec2_image_padua }}"
       region: "{{ ec2_region_padua }}"
-      instance_tags: "{'ansible_group':'padua_host', 'type':'{{ ec2_instance_type }}', 'group':'{{ ec2_security_group }}', 'Name':'padua_host_''{{ local_user_name }}'}"
+      instance_tags: "{'host_gw':'{{ ec2_host_gw_padua }}' ,'host_gw_prefix':'{{ ec2_host_gw_prefix_padua }}' ,'ansible_group':'padua_host', 'type':'{{ ec2_instance_type }}', 'group':'{{ ec2_security_group }}', 'Name':'padua_host_''{{ local_user_name }}'}"
       count: "{{ ec2_host_count }}"
       wait: true
     register: ec2
@@ -302,7 +302,7 @@
       type: "{{ ec2_instance_type }}"
       image: "{{ ec2_image_copelabs }}"
       region: "{{ ec2_region_copelabs }}"
-      instance_tags: "{'ansible_group':'copelabs_host', 'type':'{{ ec2_instance_type }}', 'group':'{{ ec2_security_group }}', 'Name':'copelabs_host_''{{ local_user_name }}'}"
+      instance_tags: "{'host_gw':'{{ ec2_host_gw_copelabs }}' ,'host_gw_prefix':'{{ ec2_host_gw_prefix_copelabs }}' ,'ansible_group':'copelabs_host', 'type':'{{ ec2_instance_type }}', 'group':'{{ ec2_security_group }}', 'Name':'copelabs_host_''{{ local_user_name }}'}"
       count: "{{ ec2_host_count }}"
       wait: true
     register: ec2
@@ -316,7 +316,7 @@
       type: "{{ ec2_instance_type }}"
       image: "{{ ec2_image_minho }}"
       region: "{{ ec2_region_minho }}"
-      instance_tags: "{'ansible_group':'minho_host', 'type':'{{ ec2_instance_type }}', 'group':'{{ ec2_security_group }}', 'Name':'minho_host_''{{ local_user_name }}'}"
+      instance_tags: "{'host_gw':'{{ ec2_host_gw_minho }}' ,'host_gw_prefix':'{{ ec2_host_gw_prefix_minho }}' ,'ansible_group':'minho_host', 'type':'{{ ec2_instance_type }}', 'group':'{{ ec2_security_group }}', 'Name':'minho_host_''{{ local_user_name }}'}"
       count: "{{ ec2_host_count }}"
       wait: true
     register: ec2
@@ -330,7 +330,7 @@
       type: "{{ ec2_instance_type }}"
       image: "{{ ec2_image_systemx }}"
       region: "{{ ec2_region_systemx }}"
-      instance_tags: "{'ansible_group':'systemx_host', 'type':'{{ ec2_instance_type }}', 'group':'{{ ec2_security_group }}', 'Name':'systemx_host_''{{ local_user_name }}'}"
+      instance_tags: "{'host_gw':'{{ ec2_host_gw_systemx }}' ,'host_gw_prefix':'{{ ec2_host_gw_prefix_systemx }}' ,'ansible_group':'systemx_host', 'type':'{{ ec2_instance_type }}', 'group':'{{ ec2_security_group }}', 'Name':'systemx_host_''{{ local_user_name }}'}"
       count: "{{ ec2_host_count }}"
       wait: true
     register: ec2
@@ -344,7 +344,7 @@
       type: "{{ ec2_instance_type }}"
       image: "{{ ec2_image_lip6 }}"
       region: "{{ ec2_region_lip6 }}"
-      instance_tags: "{'ansible_group':'lip6_host', 'type':'{{ ec2_instance_type }}', 'group':'{{ ec2_security_group }}', 'Name':'lip6_host_''{{ local_user_name }}'}"
+      instance_tags: "{'host_gw':'{{ ec2_host_gw_lip6 }}' ,'host_gw_prefix':'{{ ec2_host_gw_prefix_lip6 }}' ,'ansible_group':'lip6_host', 'type':'{{ ec2_instance_type }}', 'group':'{{ ec2_security_group }}', 'Name':'lip6_host_''{{ local_user_name }}'}"
       count: "{{ ec2_host_count }}"
       wait: true
     register: ec2
@@ -358,7 +358,7 @@
       type: "{{ ec2_instance_type }}"
       image: "{{ ec2_image_tno }}"
       region: "{{ ec2_region_tno }}"
-      instance_tags: "{'ansible_group':'tno_host', 'type':'{{ ec2_instance_type }}', 'group':'{{ ec2_security_group }}', 'Name':'tno_host_''{{ local_user_name }}'}"
+      instance_tags: "{'host_gw':'{{ ec2_host_gw_tno }}' ,'host_gw_prefix':'{{ ec2_host_gw_prefix_tno }}' ,'ansible_group':'tno_host', 'type':'{{ ec2_instance_type }}', 'group':'{{ ec2_security_group }}', 'Name':'tno_host_''{{ local_user_name }}'}"
       count: "{{ ec2_host_count }}"
       wait: true
     register: ec2
@@ -372,7 +372,7 @@
       type: "{{ ec2_instance_type }}"
       image: "{{ ec2_image_ntnu }}"
       region: "{{ ec2_region_ntnu }}"
-      instance_tags: "{'ansible_group':'ntnu_host', 'type':'{{ ec2_instance_type }}', 'group':'{{ ec2_security_group }}', 'Name':'ntnu_host_''{{ local_user_name }}'}"
+      instance_tags: "{'host_gw':'{{ ec2_host_gw_ntnu }}' ,'host_gw_prefix':'{{ ec2_host_gw_prefix_ntnu }}' ,'ansible_group':'ntnu_host', 'type':'{{ ec2_instance_type }}', 'group':'{{ ec2_security_group }}', 'Name':'ntnu_host_''{{ local_user_name }}'}"
       count: "{{ ec2_host_count }}"
       wait: true
     register: ec2
@@ -386,7 +386,7 @@
       type: "{{ ec2_instance_type }}"
       image: "{{ ec2_image_msu }}"
       region: "{{ ec2_region_msu }}"
-      instance_tags: "{'ansible_group':'msu_host', 'type':'{{ ec2_instance_type }}', 'group':'{{ ec2_security_group }}', 'Name':'msu_host_''{{ local_user_name }}'}"
+      instance_tags: "{'host_gw':'{{ ec2_host_gw_msu }}' ,'host_gw_prefix':'{{ ec2_host_gw_prefix_msu }}' ,'ansible_group':'msu_host', 'type':'{{ ec2_instance_type }}', 'group':'{{ ec2_security_group }}', 'Name':'msu_host_''{{ local_user_name }}'}"
       count: "{{ ec2_host_count }}"
       wait: true
     register: ec2
@@ -400,7 +400,7 @@
       type: "{{ ec2_instance_type }}"
       image: "{{ ec2_image_srru }}"
       region: "{{ ec2_region_srru }}"
-      instance_tags: "{'ansible_group':'srru_host', 'type':'{{ ec2_instance_type }}', 'group':'{{ ec2_security_group }}', 'Name':'srru_host_''{{ local_user_name }}'}"
+      instance_tags: "{'host_gw':'{{ ec2_host_gw_srru }}' ,'host_gw_prefix':'{{ ec2_host_gw_prefix_srru }}' ,'ansible_group':'srru_host', 'type':'{{ ec2_instance_type }}', 'group':'{{ ec2_security_group }}', 'Name':'srru_host_''{{ local_user_name }}'}"
       count: "{{ ec2_host_count }}"
       wait: true
     register: ec2
@@ -414,7 +414,7 @@
       type: "{{ ec2_instance_type }}"
       image: "{{ ec2_image_indonesia }}"
       region: "{{ ec2_region_indonesia }}"
-      instance_tags: "{'ansible_group':'indonesia_host', 'type':'{{ ec2_instance_type }}', 'group':'{{ ec2_security_group }}', 'Name':'indonesia_host_''{{ local_user_name }}'}"
+      instance_tags: "{'host_gw':'{{ ec2_host_gw_indonesia }}' ,'host_gw_prefix':'{{ ec2_host_gw_prefix_indonesia }}' ,'ansible_group':'indonesia_host', 'type':'{{ ec2_instance_type }}', 'group':'{{ ec2_security_group }}', 'Name':'indonesia_host_''{{ local_user_name }}'}"
       count: "{{ ec2_host_count }}"
       wait: true
     register: ec2
@@ -428,7 +428,7 @@
       type: "{{ ec2_instance_type }}"
       image: "{{ ec2_image_cnic }}"
       region: "{{ ec2_region_cnic }}"
-      instance_tags: "{'ansible_group':'cnic_host', 'type':'{{ ec2_instance_type }}', 'group':'{{ ec2_security_group }}', 'Name':'cnic_host_''{{ local_user_name }}'}"
+      instance_tags: "{'host_gw':'{{ ec2_host_gw_cnic }}' ,'host_gw_prefix':'{{ ec2_host_gw_prefix_cnic }}' ,'ansible_group':'cnic_host', 'type':'{{ ec2_instance_type }}', 'group':'{{ ec2_security_group }}', 'Name':'cnic_host_''{{ local_user_name }}'}"
       count: "{{ ec2_host_count }}"
       wait: true
     register: ec2
@@ -442,7 +442,7 @@
       type: "{{ ec2_instance_type }}"
       image: "{{ ec2_image_bupt }}"
       region: "{{ ec2_region_bupt }}"
-      instance_tags: "{'ansible_group':'bupt_host', 'type':'{{ ec2_instance_type }}', 'group':'{{ ec2_security_group }}', 'Name':'bupt_host_''{{ local_user_name }}'}"
+      instance_tags: "{'host_gw':'{{ ec2_host_gw_bupt }}' ,'host_gw_prefix':'{{ ec2_host_gw_prefix_bupt }}' ,'ansible_group':'bupt_host', 'type':'{{ ec2_instance_type }}', 'group':'{{ ec2_security_group }}', 'Name':'bupt_host_''{{ local_user_name }}'}"
       count: "{{ ec2_host_count }}"
       wait: true
     register: ec2
@@ -456,7 +456,7 @@
       type: "{{ ec2_instance_type }}"
       image: "{{ ec2_image_pkusz }}"
       region: "{{ ec2_region_pkusz }}"
-      instance_tags: "{'ansible_group':'pkusz_host', 'type':'{{ ec2_instance_type }}', 'group':'{{ ec2_security_group }}', 'Name':'pkusz_host_''{{ local_user_name }}'}"
+      instance_tags: "{'host_gw':'{{ ec2_host_gw_pkusz }}' ,'host_gw_prefix':'{{ ec2_host_gw_prefix_pkusz }}' ,'ansible_group':'pkusz_host', 'type':'{{ ec2_instance_type }}', 'group':'{{ ec2_security_group }}', 'Name':'pkusz_host_''{{ local_user_name }}'}"
       count: "{{ ec2_host_count }}"
       wait: true
     register: ec2
@@ -470,7 +470,7 @@
       type: "{{ ec2_instance_type }}"
       image: "{{ ec2_image_tongji }}"
       region: "{{ ec2_region_tongji }}"
-      instance_tags: "{'ansible_group':'tongji_host', 'type':'{{ ec2_instance_type }}', 'group':'{{ ec2_security_group }}', 'Name':'tongji_host_''{{ local_user_name }}'}"
+      instance_tags: "{'host_gw':'{{ ec2_host_gw_tongji }}' ,'host_gw_prefix':'{{ ec2_host_gw_prefix_tongji }}' ,'ansible_group':'tongji_host', 'type':'{{ ec2_instance_type }}', 'group':'{{ ec2_security_group }}', 'Name':'tongji_host_''{{ local_user_name }}'}"
       count: "{{ ec2_host_count }}"
       wait: true
     register: ec2
@@ -484,7 +484,7 @@
       type: "{{ ec2_instance_type }}"
       image: "{{ ec2_image_waseda }}"
       region: "{{ ec2_region_waseda }}"
-      instance_tags: "{'ansible_group':'waseda_host', 'type':'{{ ec2_instance_type }}', 'group':'{{ ec2_security_group }}', 'Name':'waseda_host_''{{ local_user_name }}'}"
+      instance_tags: "{'host_gw':'{{ ec2_host_gw_waseda }}' ,'host_gw_prefix':'{{ ec2_host_gw_prefix_waseda }}' ,'ansible_group':'waseda_host', 'type':'{{ ec2_instance_type }}', 'group':'{{ ec2_security_group }}', 'Name':'waseda_host_''{{ local_user_name }}'}"
       count: "{{ ec2_host_count }}"
       wait: true
     register: ec2
@@ -498,7 +498,7 @@
       type: "{{ ec2_instance_type }}"
       image: "{{ ec2_image_osaka }}"
       region: "{{ ec2_region_osaka }}"
-      instance_tags: "{'ansible_group':'osaka_host', 'type':'{{ ec2_instance_type }}', 'group':'{{ ec2_security_group }}', 'Name':'osaka_host_''{{ local_user_name }}'}"
+      instance_tags: "{'host_gw':'{{ ec2_host_gw_osaka }}' ,'host_gw_prefix':'{{ ec2_host_gw_prefix_osaka }}' ,'ansible_group':'osaka_host', 'type':'{{ ec2_instance_type }}', 'group':'{{ ec2_security_group }}', 'Name':'osaka_host_''{{ local_user_name }}'}"
       count: "{{ ec2_host_count }}"
       wait: true
     register: ec2
@@ -512,7 +512,7 @@
       type: "{{ ec2_instance_type }}"
       image: "{{ ec2_image_kisti }}"
       region: "{{ ec2_region_kisti }}"
-      instance_tags: "{'ansible_group':'kisti_host', 'type':'{{ ec2_instance_type }}', 'group':'{{ ec2_security_group }}', 'Name':'kisti_host_''{{ local_user_name }}'}"
+      instance_tags: "{'host_gw':'{{ ec2_host_gw_kisti }}' ,'host_gw_prefix':'{{ ec2_host_gw_prefix_kisti }}' ,'ansible_group':'kisti_host', 'type':'{{ ec2_instance_type }}', 'group':'{{ ec2_security_group }}', 'Name':'kisti_host_''{{ local_user_name }}'}"
       count: "{{ ec2_host_count }}"
       wait: true
     register: ec2
@@ -526,7 +526,7 @@
       type: "{{ ec2_instance_type }}"
       image: "{{ ec2_image_anyang }}"
       region: "{{ ec2_region_anyang }}"
-      instance_tags: "{'ansible_group':'anyang_host', 'type':'{{ ec2_instance_type }}', 'group':'{{ ec2_security_group }}', 'Name':'anyang_host_''{{ local_user_name }}'}"
+      instance_tags: "{'host_gw':'{{ ec2_host_gw_anyang }}' ,'host_gw_prefix':'{{ ec2_host_gw_prefix_anyang }}' ,'ansible_group':'anyang_host', 'type':'{{ ec2_instance_type }}', 'group':'{{ ec2_security_group }}', 'Name':'anyang_host_''{{ local_user_name }}'}"
       count: "{{ ec2_host_count }}"
       wait: true
     register: ec2

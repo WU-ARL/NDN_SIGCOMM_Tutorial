@@ -176,8 +176,8 @@ ec2_image_indonesia: ami-5d72ff3e
 
 # AP Seoul: ap-northeast-2
 # ec2_image: ami-3fca1551
-ec2_image_kisti: ami-5d72ff3e
-ec2_image_anyang: ami-5d72ff3e
+ec2_image_kisti: ami-3fca1551
+ec2_image_anyang: ami-3fca1551
 
 # AP Tokyo: ap-northeast-1
 # ec2_image: ami-8c4055eb
@@ -191,6 +191,86 @@ ec2_image_osaka: ami-8c4055eb
 # AP Mumbai: ap-south-1
 # ec2_image: ami-23daa54c
 
+
+# Host Gateways
+ec2_host_gw_arizona: hobo.cs.arizona.edu
+
+# Host GW Default Prefixes
+ec2_host_gw_prefix_arizona: /ndn/edu/arizona
+ec2_host_gw_prefix_afa: /ndn/it/afasystems
+ec2_host_gw_prefix_anyang: /ndn/kr/anyang
+ec2_host_gw_prefix_basel: /ndn/ch/unibas
+ec2_host_gw_prefix_bern: /ndn/ch/unibe
+ec2_host_gw_prefix_bupt: /ndn/cn/edu/bupt
+ec2_host_gw_prefix_byu: /ndn/edu/byu
+ec2_host_gw_prefix_caida: /ndn/org/caida
+ec2_host_gw_prefix_cnic: /ndn/cn/cas/cnic
+ec2_host_gw_prefix_copelabs: /ndn/pt/ulusofona/copelabs
+ec2_host_gw_prefix_csu: /ndn/edu/colostate
+ec2_host_gw_prefix_goettingen: /ndn/de/uni-goettingen
+ec2_host_gw_prefix_indonesia: /ndn/id/ac/ui
+ec2_host_gw_prefix_kisti: /ndn/kr/re/kisti
+ec2_host_gw_prefix_lip6: /ndn/fr/lip6
+ec2_host_gw_prefix_memphis: /ndn/edu/memphis
+ec2_host_gw_prefix_michigan: /ndn/edu/umich
+ec2_host_gw_prefix_minho: /ndn/pt/uminho
+ec2_host_gw_prefix_msu: /ndn/th/ac/msu
+ec2_host_gw_prefix_neu: /ndn/edu/neu
+ec2_host_gw_prefix_nist: /ndn/gov/nist
+ec2_host_gw_prefix_ntnu: /ndn/no/ntnu
+ec2_host_gw_prefix_osaka: /ndn/jp/ac/osaka-u
+ec2_host_gw_prefix_padua: /ndn/it/unipd
+ec2_host_gw_prefix_pkusz: /ndn/cn/edu/pkusz
+ec2_host_gw_prefix_rempa: /ndn/edu/ucla/remap
+ec2_host_gw_prefix_srru: /ndn/th/ac/srru
+ec2_host_gw_prefix_systemx: /ndn/fr/irt-systemx
+ec2_host_gw_prefix_tno: /ndn/nl/tno
+ec2_host_gw_prefix_tongji: /ndn/cn/edu/tongji
+ec2_host_gw_prefix_uci: /ndn/edu/uci
+ec2_host_gw_prefix_ucla: /ndn/edu/ucla
+ec2_host_gw_prefix_ufpa: /ndn/br/ufpa
+ec2_host_gw_prefix_uiuc: /ndn/edu/illinois
+ec2_host_gw_prefix_urjc: /ndn/es/urjc
+ec2_host_gw_prefix_waseda: /ndn/jp/waseda
+ec2_host_gw_prefix_wu: /ndn/edu/wustl
+
+ec2_host_gw_afa: 93.42.157.82
+ec2_host_gw_anyang: 210.114.89.49
+ec2_host_gw_arizona: hobo.cs.arizona.edu
+ec2_host_gw_basel: dmi-ndn-testbed1.dmi.unibas.ch
+ec2_host_gw_bern: 130.92.70.172
+ec2_host_gw_bupt: 114.247.165.44
+ec2_host_gw_byu: pasta10.cs.byu.edu
+ec2_host_gw_caida: click.caida.org
+ec2_host_gw_cnic: 159.226.186.32
+ec2_host_gw_copelabs: 193.137.75.171
+ec2_host_gw_csu: ndn.netsec.colostate.edu
+ec2_host_gw_goettingen: 134.76.249.235
+ec2_host_gw_indonesia: 152.118.101.159
+ec2_host_gw_kisti: 203.253.235.168
+ec2_host_gw_lip6: ndnhub.ipv6.lip6.fr
+ec2_host_gw_memphis: titan.cs.memphis.edu
+ec2_host_gw_michigan: 198.111.224.197
+ec2_host_gw_minho: vnetlab.gcom.di.uminho.pt
+ec2_host_gw_msu: 202.28.34.249
+ec2_host_gw_neu: 129.10.52.193
+ec2_host_gw_nist: ndn-01.antd.nist.gov
+ec2_host_gw_ntnu: 129.241.209.52
+ec2_host_gw_osaka: 133.1.17.51
+ec2_host_gw_padua: ndnnode.math.unipd.it
+ec2_host_gw_pkusz: 219.223.222.5
+ec2_host_gw_remap: 128.97.98.7
+ec2_host_gw_srru: comsci2.srru.ac.th
+ec2_host_gw_systemx: systemx-ndn-1.enst.fr
+ec2_host_gw_tno: 134.221.116.42
+ec2_host_gw_tongji: 202.120.188.246
+ec2_host_gw_uci: ndnhub.ics.uci.edu
+ec2_host_gw_ucla: spurs.cs.ucla.edu
+ec2_host_gw_ufpa: 200.239.93.10
+ec2_host_gw_uiuc: ndnx.cs.illinois.edu
+ec2_host_gw_urjc: insula.gsyc.es
+ec2_host_gw_waseda: 133.9.67.98
+ec2_host_gw_wu: wundngw.arl.wustl.edu
 
 ec2_instance_type: t2.micro
 ec2_keypair: aws_wu_jdd
