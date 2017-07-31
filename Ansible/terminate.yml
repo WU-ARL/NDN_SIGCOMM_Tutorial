@@ -1,0 +1,14 @@
+---
+## This playbook terminates all instances
+
+# Apply common configuration to all hosts
+- name: terminate tagged instances
+  hosts: all
+  tasks:
+    - ec2_facts:
+    - ec2:
+        state: 'absent'
+        region: "{{ ansible_ec2_placement_region }}"
+        instance_ids: "{{ ansible_ec2_instance_id }}"
+      delegate_to: localhost
+
