@@ -5,3 +5,5 @@ Updated: 7/30/17
 1. Add start demo tasks/plays
 2. Add AMI
 3. Figure out terminate play
+4. Split run of producer into a separate playbook so we can start it and have
+   it going before we start all the Consumers.
