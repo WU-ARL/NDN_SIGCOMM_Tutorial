@@ -119,4 +119,13 @@
 - name: create consumer-of-wu.cfg
   template: src=consumer-of-wu.cfg.j2 dest=/home/ubuntu/ndnrtc/consumer-of-wu.cfg owner=ubuntu group=ubuntu mode=644
 
+- name: run certHost.sh
+  shell: ./certHost.sh 
+  args:
+    chdir: /home/ubuntu/ndnrtc
+
+- name: run startNFD.sh
+  shell: ./startNFD.sh 
+  args:
+    chdir: /home/ubuntu/ndnrtc
 

@@ -1,5 +1,8 @@
 ---
 # tasks file for demo
 
-- shell: runClient.sh 
-  chdir: ndnrtc
+- name: run runClient.sh
+  shell: ./runClient.sh
+  args:
+    chdir: /home/ubuntu/ndnrtc
+
