@@ -113,7 +113,10 @@
 - name: create runProducer.sh
   template: src=runProducer.sh.j2 dest=/home/ubuntu/ndnrtc/runProducer.sh owner=ubuntu group=ubuntu mode=755
 
-#- name: create consumer-of-wu.cfg
-#  template: src=consumer-of-wu.cfg.j2 dest=/home/ubuntu/ndnrtc/consumer-of-wu.cfg owner=ubuntu group=ubuntu mode=644
+- name: create runClient.sh
+  template: src=runClient.sh.j2 dest=/home/ubuntu/ndnrtc/runClient.sh owner=ubuntu group=ubuntu mode=755
+
+- name: create consumer-of-wu.cfg
+  template: src=consumer-of-wu.cfg.j2 dest=/home/ubuntu/ndnrtc/consumer-of-wu.cfg owner=ubuntu group=ubuntu mode=644
 
 
