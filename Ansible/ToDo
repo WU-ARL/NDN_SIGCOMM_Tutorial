@@ -2,8 +2,11 @@
 
 Updated: 7/30/17
 
-1. Add start demo tasks/plays
-2. Add AMI
-3. Figure out terminate play
-4. Split run of producer into a separate playbook so we can start it and have
+Done 1. Add start demo tasks/plays
+Done 2. Add AMI
+Done 3. Figure out terminate play
+Done 4. Split run of producer into a separate playbook so we can start it and have
    it going before we start all the Consumers.
+
+5. Orchestrate demo scenario
+6. Make slides describing NDN Testbed, demos, etc.

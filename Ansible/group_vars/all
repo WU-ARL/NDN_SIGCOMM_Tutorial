@@ -117,9 +117,12 @@ ec2_image_nist: ami-2067405b
 ## Ohio.14.04
 #ec2_image: ami-019abc64
 #ec2_region: us-east-2
-ec2_image_memphis: ami-019abc64
-ec2_image_uiuc: ami-019abc64
-ec2_image_michigan: ami-019abc64
+# ndn ami ami-211b3b44
+
+#ec2_image_memphis: ami-019abc64
+ec2_image_memphis: ami-211b3b44
+ec2_image_uiuc: ami-211b3b44
+ec2_image_michigan: ami-211b3b44
 
 # US N. California: us-west-1
 ## N.California.14.04
@@ -143,7 +146,8 @@ ec2_image_caida: ami-f1c6ee91
 # SA Sao Paolo: sa-east-1
 ## sa-east-1 14.04
 # ec2_image: ami-d1a7ccbd
-ec2_image_ufpa: ami-d1a7ccbd
+# ndn ami: ami-e5245289
+ec2_image_ufpa: ami-e5245289
 
 # CA Canada (central): ca-central-1
 # ec2_image: ami-beea56da
@@ -153,44 +157,50 @@ ec2_image_ufpa: ami-d1a7ccbd
 
 # EU Frankfurt: eu-central-1
 # ec2_image: ami-344fe85b
-ec2_image_basel: ami-344fe85b
-ec2_image_bern: ami-344fe85b
-ec2_image_goettingen: ami-344fe85b
-ec2_image_urjc: ami-344fe85b
-ec2_image_afa: ami-344fe85b
-ec2_image_padua: ami-344fe85b
-ec2_image_copelabs: ami-344fe85b
-ec2_image_minho: ami-344fe85b
+# ndn ami: ami-928d22fd
+
+ec2_image_basel: ami-928d22fd
+ec2_image_bern: ami-928d22fd
+ec2_image_goettingen: ami-928d22fd
+ec2_image_urjc: ami-928d22fd
+ec2_image_afa: ami-928d22fd
+ec2_image_padua: ami-928d22fd
+ec2_image_copelabs: ami-928d22fd
+ec2_image_minho: ami-928d22fd
 
 # EU London: eu-west-2
 # ec2_image: ami-d67c6ab2
-ec2_image_systemx: ami-d67c6ab2 
-ec2_image_lip6: ami-d67c6ab2 
-ec2_image_tno: ami-d67c6ab2 
-ec2_image_ntnu: ami-d67c6ab2 
+# ndn ami: ami-af3f2ecb
+ec2_image_systemx: ami-af3f2ecb
+ec2_image_lip6: ami-af3f2ecb
+ec2_image_tno: ami-af3f2ecb
+ec2_image_ntnu: ami-af3f2ecb
 
 # AP Singapore: ap-southeast-1
 # ec2_image: ami-5d72ff3e
-ec2_image_msu: ami-5d72ff3e
-ec2_image_srru: ami-5d72ff3e
-ec2_image_indonesia: ami-5d72ff3e
+# ndn ami: ami-24831c47
+ec2_image_msu: ami-24831c47
+ec2_image_srru: ami-24831c47
+ec2_image_indonesia: ami-24831c47
 
 # AP Sydney: ap-southeast-2
 # ec2_image: ami-21766642
 
 # AP Seoul: ap-northeast-2
 # ec2_image: ami-3fca1551
-ec2_image_kisti: ami-3fca1551
-ec2_image_anyang: ami-3fca1551
+# ndn ami: ami-83eb32ed
+ec2_image_kisti: ami-83eb32ed
+ec2_image_anyang: ami-83eb32ed
 
 # AP Tokyo: ap-northeast-1
 # ec2_image: ami-8c4055eb
-ec2_image_cnic: ami-8c4055eb
-ec2_image_bupt: ami-8c4055eb
-ec2_image_pkusz: ami-8c4055eb
-ec2_image_tongji: ami-8c4055eb
-ec2_image_waseda: ami-8c4055eb
-ec2_image_osaka: ami-8c4055eb
+# ndn ami: ami-eeb35d88
+ec2_image_cnic: ami-eeb35d88
+ec2_image_bupt: ami-eeb35d88
+ec2_image_pkusz: ami-eeb35d88
+ec2_image_tongji: ami-eeb35d88
+ec2_image_waseda: ami-eeb35d88
+ec2_image_osaka: ami-eeb35d88
 
 # AP Mumbai: ap-south-1
 # ec2_image: ami-23daa54c

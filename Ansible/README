@@ -7,7 +7,11 @@ The two commands to do this are:
 
 ansible-playbook --ask-vault-pass launch.yml
 
+If NOT using AMIs use this command to configure:
 ansible-playbook -u ubuntu --ssh-extra-args="-i ~/.ssh/aws_wu_jdd.pem -o \"StrictHostKeyChecking no\"" --ask-vault-pass -i ec2.py configure.yml
+
+If using AMIs use this command to configure:
+ansible-playbook -u ubuntu --ssh-extra-args="-i ~/.ssh/aws_wu_jdd.pem -o \"StrictHostKeyChecking no\"" --ask-vault-pass -i ec2.py configure-with-ami.yml
 
 ansible-playbook -u ubuntu --ssh-extra-args="-i ~/.ssh/aws_wu_jdd.pem -o \"StrictHostKeyChecking no\"" --ask-vault-pass -i ec2.py runDemo.yml
 
