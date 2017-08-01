@@ -23,8 +23,8 @@
 - name: copy rule.conf
   copy: dest=/home/ubuntu/ndnrtc/rule.conf  src=roles/ndnrtc/files/rule.conf  owner=ubuntu group=ubuntu mode=644
 
-- name: copy setupHost.sh
-  copy: dest=/home/ubuntu/ndnrtc/setupHost.sh  src=roles/ndnrtc/files/setupHost.sh  owner=ubuntu group=ubuntu mode=755
+#- name: copy setupHost.sh
+#  copy: dest=/home/ubuntu/ndnrtc/setupHost.sh  src=roles/ndnrtc/files/setupHost.sh  owner=ubuntu group=ubuntu mode=755
 
 #- name: copy runProducerAtWU.sh
 #  copy: dest=/home/ubuntu/ndnrtc/runProducerAtWU.sh  src=roles/ndnrtc/files/runProducerAtWU.sh  owner=ubuntu group=ubuntu mode=755
@@ -101,14 +101,14 @@
 #- name: copy certHostWU.sh
 #  copy: dest=/home/ubuntu/ndnrtc/certHostWU.sh  src=roles/ndnrtc/files/certHostWU.sh  owner=ubuntu group=ubuntu mode=755
 
-- name: create certHost.sh
-  template: src=certHost.sh.j2 dest=/home/ubuntu/ndnrtc/certHost.sh owner=ubuntu group=ubuntu mode=755
+#- name: create certHost.sh
+#  template: src=certHost.sh.j2 dest=/home/ubuntu/ndnrtc/certHost.sh owner=ubuntu group=ubuntu mode=755
 
-- name: create startNFD.sh
-  template: src=startNFD.sh.j2 dest=/home/ubuntu/ndnrtc/startNFD.sh owner=ubuntu group=ubuntu mode=755
+#- name: create startNFD.sh
+#  template: src=startNFD.sh.j2 dest=/home/ubuntu/ndnrtc/startNFD.sh owner=ubuntu group=ubuntu mode=755
 
-- name: create runConsumerOfWU.sh
-  template: src=runConsumerOfWU.sh.j2 dest=/home/ubuntu/ndnrtc/runConsumerOfWU.sh owner=ubuntu group=ubuntu mode=755
+#- name: create runConsumerOfWU.sh
+#  template: src=runConsumerOfWU.sh.j2 dest=/home/ubuntu/ndnrtc/runConsumerOfWU.sh owner=ubuntu group=ubuntu mode=755
 
 - name: create runProducer.sh
   template: src=runProducer.sh.j2 dest=/home/ubuntu/ndnrtc/runProducer.sh owner=ubuntu group=ubuntu mode=755
@@ -119,13 +119,13 @@
 - name: create consumer-of-wu.cfg
   template: src=consumer-of-wu.cfg.j2 dest=/home/ubuntu/ndnrtc/consumer-of-wu.cfg owner=ubuntu group=ubuntu mode=644
 
-- name: run certHost.sh
-  shell: ./certHost.sh 
-  args:
-    chdir: /home/ubuntu/ndnrtc
+#- name: run certHost.sh
+#  shell: ./certHost.sh 
+#  args:
+#    chdir: /home/ubuntu/ndnrtc
 
-- name: run startNFD.sh
-  shell: ./startNFD.sh 
-  args:
-    chdir: /home/ubuntu/ndnrtc
+#- name: run startNFD.sh
+#  shell: ./startNFD.sh 
+#  args:
+#    chdir: /home/ubuntu/ndnrtc
 

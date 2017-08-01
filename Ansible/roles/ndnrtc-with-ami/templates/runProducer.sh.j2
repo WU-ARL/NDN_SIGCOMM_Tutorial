@@ -1,0 +1,11 @@
+#!/bin/bash
+
+# make sure we don't have one running already
+killall ndnrtc-client
+
+if [ ! -f test-source-320x240.argb ]
+then
+  tar -xzf test-source-320x240.argb.tar.gz
+fi
+
+nohup ./ndnrtc-client -c producer.cfg -i clientA -p rule.conf -s {{ ec2_tag_host_gw_prefix }}/jdd -t 600 >& /tmp/runProducer.log &

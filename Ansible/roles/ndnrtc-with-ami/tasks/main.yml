@@ -1,0 +1,28 @@
+---
+# tasks file for ndnrtc-with-ami
+
+- name: create runClient.sh
+  template: src=runClient.sh.j2 dest=/home/ubuntu/ndnrtc/runClient.sh owner=ubuntu group=ubuntu mode=755
+
+- name: create certHost.sh
+  template: src=certHost.sh.j2 dest=/home/ubuntu/ndnrtc/certHost.sh owner=ubuntu group=ubuntu mode=755
+
+- name: create runProducer.sh
+  template: src=runProducer.sh.j2 dest=/home/ubuntu/ndnrtc/runProducer.sh owner=ubuntu group=ubuntu mode=755
+
+- name: create runConsumerOfWU.sh
+  template: src=runConsumerOfWU.sh.j2 dest=/home/ubuntu/ndnrtc/runConsumerOfWU.sh owner=ubuntu group=ubuntu mode=755
+
+- name: create startNFD.sh
+  template: src=startNFD.sh.j2 dest=/home/ubuntu/ndnrtc/startNFD.sh owner=ubuntu group=ubuntu mode=755
+
+- name: run certHost.sh
+  shell: ./certHost.sh 
+  args:
+    chdir: /home/ubuntu/ndnrtc
+
+- name: run startNFD.sh
+  shell: ./startNFD.sh 
+  args:
+    chdir: /home/ubuntu/ndnrtc
+

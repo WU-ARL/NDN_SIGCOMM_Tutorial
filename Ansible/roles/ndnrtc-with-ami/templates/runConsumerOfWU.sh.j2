@@ -1,0 +1,8 @@
+#!/bin/bash
+
+
+# make sure we don't have another already running:
+killall ndnrtc-client
+
+nohup ./ndnrtc-client -c consumer-of-wu.cfg -p rule.conf -s {{ ec2_tag_host_gw_prefix }}/jdd -t 30 >& /tmp/runConsumerOfWU.log &
+
