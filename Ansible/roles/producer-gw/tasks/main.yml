@@ -1,6 +1,11 @@
 ---
 # tasks file for producer-gw
 
+- name: do an ndnping from producer to WU to make sure face is there
+  #shell: "/usr/bin/ndnping -c 5 /ndn/edu/wustl >& /dev/null"
+  shell: "/usr/bin/ndnping -c 5 /ndn/edu/wustl "
+  when: ec2_tag_group is defined and (ec2_tag_group == "ndnrtc-producer")
+
 - local_action: copy content="{{ inventory_hostname }}" dest=./producer_hostname
   when: ec2_tag_group is defined and (ec2_tag_group == "ndnrtc-producer")
 
