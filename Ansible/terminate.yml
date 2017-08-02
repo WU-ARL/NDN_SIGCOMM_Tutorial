@@ -6,9 +6,13 @@
   hosts: all
   tasks:
     - ec2_facts:
+      when: inventory_hostname != "WU"
+
     - ec2:
         state: 'absent'
-        region: "{{ ansible_ec2_placement_region }}"
-        instance_ids: "{{ ansible_ec2_instance_id }}"
+        region: "{{ ec2_region }}"
+        #instance_ids: "{{ ansible_ec2_instance_id }}"
+        instance_ids: "{{ ec2_id }}"
       delegate_to: localhost
+      when: inventory_hostname != "WU"
 

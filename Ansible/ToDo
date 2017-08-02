@@ -10,3 +10,4 @@ Done 4. Split run of producer into a separate playbook so we can start it and ha
 
 5. Orchestrate demo scenario
 6. Make slides describing NDN Testbed, demos, etc.
+Done 7. Add nfdc update to WU gw node so the producer gets the Interests.

@@ -2,16 +2,17 @@
 # tasks file for demo
 - debug:
     msg: "group: {{ ec2_tag_group }} "
+  when: inventory_hostname != "WU"
 
 - name: run runClient.sh for Producer
   shell: ./runClient.sh
   args:
     chdir: /home/ubuntu/ndnrtc
-  when: ec2_tag_group  == "ndnrtc-producer" 
+  when: (inventory_hostname != "WU") and (ec2_tag_group  == "ndnrtc-producer" )
 
 - name: run runClient.sh for Consumers
   shell: ./runClient.sh
   args:
     chdir: /home/ubuntu/ndnrtc
-  when: ec2_tag_group  == "ndnrtc-consumer" 
+  when: (inventory_hostname != "WU") and (ec2_tag_group  == "ndnrtc-consumer" )
 
