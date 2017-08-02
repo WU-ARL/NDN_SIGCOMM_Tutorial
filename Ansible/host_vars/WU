@@ -1,0 +1,6 @@
+---
+
+# file: host_vars/WU
+ansible_user: ndnops
+ansible_host: wundngw.arl.wustl.edu
+
