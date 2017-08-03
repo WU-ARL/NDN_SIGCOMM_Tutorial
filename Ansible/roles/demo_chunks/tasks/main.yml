@@ -1,0 +1,10 @@
+---
+# tasks file for demo_chunks
+
+- name: run Put script on producer
+  script: roles/demo_chunks/files/runPut.sh {{ suffix }}
+  when: (inventory_hostname != "WU") and (ec2_tag_group  == "ndnrtc-producer" )
+
+- name: run Cat script on consumers
+  script: roles/demo_chunks/files/runCat.sh {{ suffix }}
+  when: (inventory_hostname != "WU") and (ec2_tag_group  == "ndnrtc-consumer" )
