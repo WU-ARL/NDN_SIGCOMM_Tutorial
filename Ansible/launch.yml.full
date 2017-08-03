@@ -222,24 +222,24 @@
       wait: true
     register: ec2
 
-  - name: Launch end host for NIST
-    ec2:
-      access_key: "{{ ec2_access_key }}"
-      secret_key: "{{ ec2_secret_key }}"
-      keypair: "{{ ec2_keypair }}"
-      group: "{{ ec2_security_group }}"
-      type: "{{ ec2_instance_type }}"
-      image: "{{ ec2_image_nist }}"
-      volumes:
-        - device_name: /dev/sda1
-          volume_type: gp2
-          volume_size: 20
-          delete_on_termination: true
-      region: "{{ ec2_region_nist }}"
-      instance_tags: "{'host_gw':'{{ ec2_host_gw_nist }}' ,'host_gw_prefix':'{{ ec2_host_gw_prefix_nist }}' ,'ansible_group':'nist_host', 'type':'{{ ec2_instance_type }}', 'group':'ndnrtc-consumer', 'Name':'nist_host_''{{ local_user_name }}'}"
-      count: "{{ ec2_host_count }}"
-      wait: true
-    register: ec2
+#  - name: Launch end host for NIST
+#    ec2:
+#      access_key: "{{ ec2_access_key }}"
+#      secret_key: "{{ ec2_secret_key }}"
+#      keypair: "{{ ec2_keypair }}"
+#      group: "{{ ec2_security_group }}"
+#      type: "{{ ec2_instance_type }}"
+#      image: "{{ ec2_image_nist }}"
+#      volumes:
+#        - device_name: /dev/sda1
+#          volume_type: gp2
+#          volume_size: 20
+#          delete_on_termination: true
+#      region: "{{ ec2_region_nist }}"
+#      instance_tags: "{'host_gw':'{{ ec2_host_gw_nist }}' ,'host_gw_prefix':'{{ ec2_host_gw_prefix_nist }}' ,'ansible_group':'nist_host', 'type':'{{ ec2_instance_type }}', 'group':'ndnrtc-consumer', 'Name':'nist_host_''{{ local_user_name }}'}"
+#      count: "{{ ec2_host_count }}"
+#      wait: true
+#    register: ec2
 
   - name: Launch end host for CAIDA
     ec2:
