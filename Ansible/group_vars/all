@@ -109,9 +109,11 @@ ec2_region_nist: us-east-1
 # ndn ami: ami-2067405b
 #ec2_region: us-east-1
 #ec2_image_wu: ami-4b133c5d
-ec2_image_wu: ami-2067405b
-ec2_image_neu: ami-2067405b
-ec2_image_nist: ami-2067405b
+#ec2_image_wu: ami-2067405b
+ec2_image_wu: ami-d26141a9
+ec2_image_neu: ami-d26141a9
+ec2_image_nist: ami-d26141a9
+
 
 # US Ohio: us-east-2
 ## Ohio.14.04
@@ -120,9 +122,10 @@ ec2_image_nist: ami-2067405b
 # ndn ami ami-211b3b44
 
 #ec2_image_memphis: ami-019abc64
-ec2_image_memphis: ami-211b3b44
-ec2_image_uiuc: ami-211b3b44
-ec2_image_michigan: ami-211b3b44
+#ec2_image_memphis: ami-211b3b44
+ec2_image_memphis: ami-9feacafa
+ec2_image_uiuc: ami-9feacafa
+ec2_image_michigan: ami-9feacafa
 
 # US N. California: us-west-1
 ## N.California.14.04
@@ -130,13 +133,15 @@ ec2_image_michigan: ami-211b3b44
 # ndn ami: ami-f1c6ee91
 #ec2_region: us-west-1
 #ec2_image_arizona: ami-89f3dee9
-ec2_image_arizona: ami-f1c6ee91
-ec2_image_byu: ami-f1c6ee91
-ec2_image_csu: ami-f1c6ee91
-ec2_image_uci: ami-f1c6ee91
-ec2_image_ucla: ami-f1c6ee91
-ec2_image_remap: ami-f1c6ee91
-ec2_image_caida: ami-f1c6ee91
+#ec2_image_arizona: ami-f1c6ee91
+ec2_image_arizona: ami-0085ad60
+ec2_image_byu: ami-0085ad60
+ec2_image_csu: ami-0085ad60
+ec2_image_uci: ami-0085ad60 
+ec2_image_ucla: ami-0085ad60 
+ec2_image_remap: ami-0085ad60 
+ec2_image_caida: ami-0085ad60
+
 
 # US Oregon: us-west-2
 ## Oregon.14.04
@@ -146,8 +151,8 @@ ec2_image_caida: ami-f1c6ee91
 # SA Sao Paolo: sa-east-1
 ## sa-east-1 14.04
 # ec2_image: ami-d1a7ccbd
-# ndn ami: ami-e5245289
-ec2_image_ufpa: ami-e5245289
+# ndn ami: ami-727e081e
+ec2_image_ufpa: ami-727e081e
 
 # CA Canada (central): ca-central-1
 # ec2_image: ami-beea56da
@@ -158,49 +163,56 @@ ec2_image_ufpa: ami-e5245289
 # EU Frankfurt: eu-central-1
 # ec2_image: ami-344fe85b
 # ndn ami: ami-928d22fd
+# ndn ami: ami-343f905b
+#ec2_image_basel: ami-928d22fd
 
-ec2_image_basel: ami-928d22fd
-ec2_image_bern: ami-928d22fd
-ec2_image_goettingen: ami-928d22fd
-ec2_image_urjc: ami-928d22fd
-ec2_image_afa: ami-928d22fd
-ec2_image_padua: ami-928d22fd
-ec2_image_copelabs: ami-928d22fd
-ec2_image_minho: ami-928d22fd
+
+ec2_image_basel: ami-343f905b
+ec2_image_bern: ami-343f905b
+ec2_image_goettingen: ami-343f905b
+ec2_image_urjc: ami-343f905b
+ec2_image_afa: ami-343f905b
+ec2_image_padua: ami-343f905b
+ec2_image_copelabs: ami-343f905b
+ec2_image_minho: ami-343f905b
 
 # EU London: eu-west-2
 # ec2_image: ami-d67c6ab2
-# ndn ami: ami-af3f2ecb
-ec2_image_systemx: ami-af3f2ecb
-ec2_image_lip6: ami-af3f2ecb
-ec2_image_tno: ami-af3f2ecb
-ec2_image_ntnu: ami-af3f2ecb
+# ndn ami: ami-b9d1c0dd
+# ec2_image_systemx: ami-af3f2ecb
+
+ec2_image_systemx: ami-b9d1c0dd
+ec2_image_lip6: ami-b9d1c0dd
+ec2_image_tno: ami-b9d1c0dd
+ec2_image_ntnu: ami-b9d1c0dd
 
 # AP Singapore: ap-southeast-1
 # ec2_image: ami-5d72ff3e
-# ndn ami: ami-24831c47
-ec2_image_msu: ami-24831c47
-ec2_image_srru: ami-24831c47
-ec2_image_indonesia: ami-24831c47
+# ndn ami: ami-34e27c57
+#ec2_image_msu: ami-24831c47
+
+ec2_image_msu: ami-34e27c57
+ec2_image_srru: ami-34e27c57
+ec2_image_indonesia: ami-34e27c57
 
 # AP Sydney: ap-southeast-2
 # ec2_image: ami-21766642
 
 # AP Seoul: ap-northeast-2
 # ec2_image: ami-3fca1551
-# ndn ami: ami-83eb32ed
-ec2_image_kisti: ami-83eb32ed
-ec2_image_anyang: ami-83eb32ed
+# ndn ami: ami-5e13ca30
+ec2_image_kisti: ami-5e13ca30
+ec2_image_anyang: ami-5e13ca30
 
 # AP Tokyo: ap-northeast-1
 # ec2_image: ami-8c4055eb
-# ndn ami: ami-eeb35d88
-ec2_image_cnic: ami-eeb35d88
-ec2_image_bupt: ami-eeb35d88
-ec2_image_pkusz: ami-eeb35d88
-ec2_image_tongji: ami-eeb35d88
-ec2_image_waseda: ami-eeb35d88
-ec2_image_osaka: ami-eeb35d88
+# ndn ami: ami-24e60f42
+ec2_image_cnic: ami-24e60f42
+ec2_image_bupt: ami-24e60f42
+ec2_image_pkusz: ami-24e60f42
+ec2_image_tongji: ami-24e60f42
+ec2_image_waseda: ami-24e60f42
+ec2_image_osaka: ami-24e60f42
 
 # AP Mumbai: ap-south-1
 # ec2_image: ami-23daa54c
