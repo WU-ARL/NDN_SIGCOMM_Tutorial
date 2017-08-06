@@ -51,24 +51,24 @@
       wait: true
     register: ec2
 
-  - name: Launch end host for SRRU
-    ec2:
-      access_key: "{{ ec2_access_key }}"
-      secret_key: "{{ ec2_secret_key }}"
-      keypair: "{{ ec2_keypair }}"
-      group: "{{ ec2_security_group }}"
-      type: "{{ ec2_instance_type }}"
-      image: "{{ ec2_image_srru }}"
-      volumes:
-        - device_name: /dev/sda1
-          volume_type: gp2
-          volume_size: 20
-          delete_on_termination: true
-      region: "{{ ec2_region_srru }}"
-      instance_tags: "{'host_gw':'{{ ec2_host_gw_srru }}' ,'host_gw_prefix':'{{ ec2_host_gw_prefix_srru }}' ,'ansible_group':'srru_host', 'type':'{{ ec2_instance_type }}', 'group':'ndnrtc-consumer', 'Name':'srru_host_''{{ local_user_name }}'}"
-      count: "{{ ec2_host_count }}"
-      wait: true
-    register: ec2
+#  - name: Launch end host for SRRU
+#    ec2:
+#      access_key: "{{ ec2_access_key }}"
+#      secret_key: "{{ ec2_secret_key }}"
+#      keypair: "{{ ec2_keypair }}"
+#      group: "{{ ec2_security_group }}"
+#      type: "{{ ec2_instance_type }}"
+#      image: "{{ ec2_image_srru }}"
+#      volumes:
+#        - device_name: /dev/sda1
+#          volume_type: gp2
+#          volume_size: 20
+#          delete_on_termination: true
+#      region: "{{ ec2_region_srru }}"
+#      instance_tags: "{'host_gw':'{{ ec2_host_gw_srru }}' ,'host_gw_prefix':'{{ ec2_host_gw_prefix_srru }}' ,'ansible_group':'srru_host', 'type':'{{ ec2_instance_type }}', 'group':'ndnrtc-consumer', 'Name':'srru_host_''{{ local_user_name }}'}"
+#      count: "{{ ec2_host_count }}"
+#      wait: true
+#    register: ec2
 
   - name: Launch end host for INDONESIA
     ec2:
@@ -89,43 +89,43 @@
       wait: true
     register: ec2
 
-  - name: Launch end host for CNIC
-    ec2:
-      access_key: "{{ ec2_access_key }}"
-      secret_key: "{{ ec2_secret_key }}"
-      keypair: "{{ ec2_keypair }}"
-      group: "{{ ec2_security_group }}"
-      type: "{{ ec2_instance_type }}"
-      image: "{{ ec2_image_cnic }}"
-      volumes:
-        - device_name: /dev/sda1
-          volume_type: gp2
-          volume_size: 20
-          delete_on_termination: true
-      region: "{{ ec2_region_cnic }}"
-      instance_tags: "{'host_gw':'{{ ec2_host_gw_cnic }}' ,'host_gw_prefix':'{{ ec2_host_gw_prefix_cnic }}' ,'ansible_group':'cnic_host', 'type':'{{ ec2_instance_type }}', 'group':'ndnrtc-consumer', 'Name':'cnic_host_''{{ local_user_name }}'}"
-      count: "{{ ec2_host_count }}"
-      wait: true
-    register: ec2
+#  - name: Launch end host for CNIC
+#    ec2:
+#      access_key: "{{ ec2_access_key }}"
+#      secret_key: "{{ ec2_secret_key }}"
+#      keypair: "{{ ec2_keypair }}"
+#      group: "{{ ec2_security_group }}"
+#      type: "{{ ec2_instance_type }}"
+#      image: "{{ ec2_image_cnic }}"
+#      volumes:
+#        - device_name: /dev/sda1
+#          volume_type: gp2
+#          volume_size: 20
+#          delete_on_termination: true
+#      region: "{{ ec2_region_cnic }}"
+#      instance_tags: "{'host_gw':'{{ ec2_host_gw_cnic }}' ,'host_gw_prefix':'{{ ec2_host_gw_prefix_cnic }}' ,'ansible_group':'cnic_host', 'type':'{{ ec2_instance_type }}', 'group':'ndnrtc-consumer', 'Name':'cnic_host_''{{ local_user_name }}'}"
+#      count: "{{ ec2_host_count }}"
+#      wait: true
+#    register: ec2
 
-  - name: Launch end host for BUPT
-    ec2:
-      access_key: "{{ ec2_access_key }}"
-      secret_key: "{{ ec2_secret_key }}"
-      keypair: "{{ ec2_keypair }}"
-      group: "{{ ec2_security_group }}"
-      type: "{{ ec2_instance_type }}"
-      image: "{{ ec2_image_bupt }}"
-      volumes:
-        - device_name: /dev/sda1
-          volume_type: gp2
-          volume_size: 20
-          delete_on_termination: true
-      region: "{{ ec2_region_bupt }}"
-      instance_tags: "{'host_gw':'{{ ec2_host_gw_bupt }}' ,'host_gw_prefix':'{{ ec2_host_gw_prefix_bupt }}' ,'ansible_group':'bupt_host', 'type':'{{ ec2_instance_type }}', 'group':'ndnrtc-consumer', 'Name':'bupt_host_''{{ local_user_name }}'}"
-      count: "{{ ec2_host_count }}"
-      wait: true
-    register: ec2
+#  - name: Launch end host for BUPT
+#    ec2:
+#      access_key: "{{ ec2_access_key }}"
+#      secret_key: "{{ ec2_secret_key }}"
+#      keypair: "{{ ec2_keypair }}"
+#      group: "{{ ec2_security_group }}"
+#      type: "{{ ec2_instance_type }}"
+#      image: "{{ ec2_image_bupt }}"
+#      volumes:
+#        - device_name: /dev/sda1
+#          volume_type: gp2
+#          volume_size: 20
+#          delete_on_termination: true
+#      region: "{{ ec2_region_bupt }}"
+#      instance_tags: "{'host_gw':'{{ ec2_host_gw_bupt }}' ,'host_gw_prefix':'{{ ec2_host_gw_prefix_bupt }}' ,'ansible_group':'bupt_host', 'type':'{{ ec2_instance_type }}', 'group':'ndnrtc-consumer', 'Name':'bupt_host_''{{ local_user_name }}'}"
+#      count: "{{ ec2_host_count }}"
+#      wait: true
+#    register: ec2
 
   - name: Launch end host for PKUSZ
     ec2:
@@ -146,43 +146,43 @@
       wait: true
     register: ec2
 
-  - name: Launch end host for TONGJI
-    ec2:
-      access_key: "{{ ec2_access_key }}"
-      secret_key: "{{ ec2_secret_key }}"
-      keypair: "{{ ec2_keypair }}"
-      group: "{{ ec2_security_group }}"
-      type: "{{ ec2_instance_type }}"
-      image: "{{ ec2_image_tongji }}"
-      volumes:
-        - device_name: /dev/sda1
-          volume_type: gp2
-          volume_size: 20
-          delete_on_termination: true
-      region: "{{ ec2_region_tongji }}"
-      instance_tags: "{'host_gw':'{{ ec2_host_gw_tongji }}' ,'host_gw_prefix':'{{ ec2_host_gw_prefix_tongji }}' ,'ansible_group':'tongji_host', 'type':'{{ ec2_instance_type }}', 'group':'ndnrtc-consumer', 'Name':'tongji_host_''{{ local_user_name }}'}"
-      count: "{{ ec2_host_count }}"
-      wait: true
-    register: ec2
+#  - name: Launch end host for TONGJI
+#    ec2:
+#      access_key: "{{ ec2_access_key }}"
+#      secret_key: "{{ ec2_secret_key }}"
+#      keypair: "{{ ec2_keypair }}"
+#      group: "{{ ec2_security_group }}"
+#      type: "{{ ec2_instance_type }}"
+#      image: "{{ ec2_image_tongji }}"
+#      volumes:
+#        - device_name: /dev/sda1
+#          volume_type: gp2
+#          volume_size: 20
+#          delete_on_termination: true
+#      region: "{{ ec2_region_tongji }}"
+#      instance_tags: "{'host_gw':'{{ ec2_host_gw_tongji }}' ,'host_gw_prefix':'{{ ec2_host_gw_prefix_tongji }}' ,'ansible_group':'tongji_host', 'type':'{{ ec2_instance_type }}', 'group':'ndnrtc-consumer', 'Name':'tongji_host_''{{ local_user_name }}'}"
+#      count: "{{ ec2_host_count }}"
+#      wait: true
+#    register: ec2
 
-  - name: Launch end host for WASEDA
-    ec2:
-      access_key: "{{ ec2_access_key }}"
-      secret_key: "{{ ec2_secret_key }}"
-      keypair: "{{ ec2_keypair }}"
-      group: "{{ ec2_security_group }}"
-      type: "{{ ec2_instance_type }}"
-      image: "{{ ec2_image_waseda }}"
-      volumes:
-        - device_name: /dev/sda1
-          volume_type: gp2
-          volume_size: 20
-          delete_on_termination: true
-      region: "{{ ec2_region_waseda }}"
-      instance_tags: "{'host_gw':'{{ ec2_host_gw_waseda }}' ,'host_gw_prefix':'{{ ec2_host_gw_prefix_waseda }}' ,'ansible_group':'waseda_host', 'type':'{{ ec2_instance_type }}', 'group':'ndnrtc-consumer', 'Name':'waseda_host_''{{ local_user_name }}'}"
-      count: "{{ ec2_host_count }}"
-      wait: true
-    register: ec2
+#  - name: Launch end host for WASEDA
+#    ec2:
+#      access_key: "{{ ec2_access_key }}"
+#      secret_key: "{{ ec2_secret_key }}"
+#      keypair: "{{ ec2_keypair }}"
+#      group: "{{ ec2_security_group }}"
+#      type: "{{ ec2_instance_type }}"
+#      image: "{{ ec2_image_waseda }}"
+#      volumes:
+#        - device_name: /dev/sda1
+#          volume_type: gp2
+#          volume_size: 20
+#          delete_on_termination: true
+#      region: "{{ ec2_region_waseda }}"
+#      instance_tags: "{'host_gw':'{{ ec2_host_gw_waseda }}' ,'host_gw_prefix':'{{ ec2_host_gw_prefix_waseda }}' ,'ansible_group':'waseda_host', 'type':'{{ ec2_instance_type }}', 'group':'ndnrtc-consumer', 'Name':'waseda_host_''{{ local_user_name }}'}"
+#      count: "{{ ec2_host_count }}"
+#      wait: true
+#    register: ec2
 
   - name: Launch end host for OSAKA
     ec2:
@@ -222,24 +222,24 @@
       wait: true
     register: ec2
 
-  - name: Launch end host for ANYANG
-    ec2:
-      access_key: "{{ ec2_access_key }}"
-      secret_key: "{{ ec2_secret_key }}"
-      keypair: "{{ ec2_keypair }}"
-      group: "{{ ec2_security_group }}"
-      type: "{{ ec2_instance_type }}"
-      image: "{{ ec2_image_anyang }}"
-      volumes:
-        - device_name: /dev/sda1
-          volume_type: gp2
-          volume_size: 20
-          delete_on_termination: true
-      region: "{{ ec2_region_anyang }}"
-      instance_tags: "{'host_gw':'{{ ec2_host_gw_anyang }}' ,'host_gw_prefix':'{{ ec2_host_gw_prefix_anyang }}' ,'ansible_group':'anyang_host', 'type':'{{ ec2_instance_type }}', 'group':'ndnrtc-consumer', 'Name':'anyang_host_''{{ local_user_name }}'}"
-      count: "{{ ec2_host_count }}"
-      wait: true
-    register: ec2
+#  - name: Launch end host for ANYANG
+#    ec2:
+#      access_key: "{{ ec2_access_key }}"
+#      secret_key: "{{ ec2_secret_key }}"
+#      keypair: "{{ ec2_keypair }}"
+#      group: "{{ ec2_security_group }}"
+#      type: "{{ ec2_instance_type }}"
+#      image: "{{ ec2_image_anyang }}"
+#      volumes:
+#        - device_name: /dev/sda1
+#          volume_type: gp2
+#          volume_size: 20
+#          delete_on_termination: true
+#      region: "{{ ec2_region_anyang }}"
+#      instance_tags: "{'host_gw':'{{ ec2_host_gw_anyang }}' ,'host_gw_prefix':'{{ ec2_host_gw_prefix_anyang }}' ,'ansible_group':'anyang_host', 'type':'{{ ec2_instance_type }}', 'group':'ndnrtc-consumer', 'Name':'anyang_host_''{{ local_user_name }}'}"
+#      count: "{{ ec2_host_count }}"
+#      wait: true
+#    register: ec2
 
   - name: Wait for SSH to come up
     wait_for:

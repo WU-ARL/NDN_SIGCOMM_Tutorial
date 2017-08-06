@@ -14,5 +14,11 @@ fi
 # make sure there is not already one running
 killall ndnputchunks
 
-ndnputchunks  -s 1000 ndn:/ndn/edu/wustl/jdd/testfile.5MB.${SUFFIX} < testfile.5MB &
+echo "nohup ndnputchunks  -s 1000 ndn:/ndn/edu/wustl/jdd/testfile.5MB.${SUFFIX} < testfile.5MB & " > runPut.sh.echo
+
+nohup ndnputchunks  -s 1000 ndn:/ndn/edu/wustl/jdd/testfile.5MB.${SUFFIX} < testfile.5MB &
+
+sleep 2
+
+ps auxwww | grep chunks >& ps.out
 

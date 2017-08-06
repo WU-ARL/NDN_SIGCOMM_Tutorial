@@ -9,5 +9,10 @@ fi
 # make sure there is not already one running
 killall ndncatchunks
 
-ndncatchunks -s 10  -r 20 /ndn/edu/wustl/jdd/testfile.5MB.${SUFFIX} > testfile.5MB.${SUFFIX} &
+echo "nohup ndncatchunks -s 10  -r 20 /ndn/edu/wustl/jdd/testfile.5MB.${SUFFIX} > testfile.5MB.${SUFFIX} &" > runCat.sh.echo
 
+nohup ndncatchunks -s 10  -r 20 /ndn/edu/wustl/jdd/testfile.5MB.${SUFFIX} > testfile.5MB.${SUFFIX} &
+
+sleep 2
+
+ps auxwww | grep chunks >& ps.out
