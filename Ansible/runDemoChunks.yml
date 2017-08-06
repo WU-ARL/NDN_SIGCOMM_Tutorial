@@ -5,6 +5,7 @@
 - hosts: all
   
   roles:
+  - {role: 'producer-gw', tags: 'producer-gw'}   # to use the tag, use this option: --tags "producer-gw"
   - {role: 'demo_chunks', tags: 'demo_chunks'}  # to use the tag, use this option: --tags "demo_chunks"
 
 
