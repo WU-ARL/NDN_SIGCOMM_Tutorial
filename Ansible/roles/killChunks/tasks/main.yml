@@ -1,0 +1,8 @@
+---
+# tasks file for killChunks
+
+- name: run kill script on all clients
+  script: roles/killChunks/files/killChunks.sh 
+  when: (inventory_hostname != "WU") and ((ec2_tag_group  == "ndnrtc-producer" ) or (ec2_tag_group == "ndnrtc-consumer"))
+  ignore_errors: yes
+
