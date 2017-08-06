@@ -1,0 +1,10 @@
+---
+## This playbook deploys the whole application stack in this site.  
+
+# Apply common configuration to all hosts
+- hosts: all
+  
+  roles:
+  - {role: 'demo_chunks', tags: 'demo_chunks'}  # to use the tag, use this option: --tags "demo_chunks"
+
+
