@@ -7,11 +7,15 @@ The two commands to do this are:
 
 ansible-playbook --ask-vault-pass launch.yml
 
+ansible-playbook --ask-vault-pass launch-validation.yml
+
 If NOT using AMIs use this command to configure:
 ansible-playbook -u ubuntu --ssh-extra-args="-i ~/.ssh/aws_wu_jdd.pem -o \"StrictHostKeyChecking no\"" --ask-vault-pass -i inventory configure.yml
 
 If using AMIs use this command to configure:
 ansible-playbook -u ubuntu --ssh-extra-args="-i ~/.ssh/aws_wu_jdd.pem -o \"StrictHostKeyChecking no\"" --ask-vault-pass -i inventory configure-with-ami.yml
+
+ansible-playbook -u ubuntu --ssh-extra-args="-i ~/.ssh/aws_wu_jdd.pem -o \"StrictHostKeyChecking no\"" --ask-vault-pass -i inventory configure-with-ami-validation.yml
 
 ansible-playbook -u ubuntu --ssh-extra-args="-i ~/.ssh/aws_wu_jdd.pem -o \"StrictHostKeyChecking no\"" --ask-vault-pass -i inventory runDemo.yml
 

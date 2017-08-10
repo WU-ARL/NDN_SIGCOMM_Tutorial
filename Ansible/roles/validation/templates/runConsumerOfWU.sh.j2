@@ -1,0 +1,12 @@
+#!/bin/bash
+
+
+# make sure we don't have another already running:
+killall ndncatchunks
+
+# ndncatchunks command goes here:
+nohup ndncatchunks -c /home/ubuntu/validation/consumer.cfg /ndn/edu/wustl/jdd/file1 > file1.png &
+nohup ndncatchunks -c /home/ubuntu/validation/consumer.cfg /ndn/edu/wustl/jdd/file2 > file2.png &
+nohup ndncatchunks -c /home/ubuntu/validation/consumer.cfg /ndn/edu/wustl/jdd/file3 > file3.png &
+nohup ndncatchunks -c /home/ubuntu/validation/consumer.cfg /ndn/edu/wustl/jdd/file4 > file4.png &
+

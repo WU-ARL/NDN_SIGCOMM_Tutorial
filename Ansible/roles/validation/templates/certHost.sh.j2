@@ -1,0 +1,9 @@
+#!/bin/bash
+
+#create signing id and cert on WU host
+ndnsec-key-gen {{ ec2_tag_host_gw_prefix }}/jdd >& cert.request
+ndnsec-cert-gen -s {{ ec2_tag_host_gw_prefix }}/jdd -N {{ ec2_tag_host_gw_prefix }}/jdd cert.request  > cert
+ndnsec-cert-dump -i {{ ec2_tag_host_gw_prefix }}/jdd > signing.cert
+
+
+

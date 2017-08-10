@@ -4,10 +4,10 @@
 - name: do an ndnping from producer to WU to make sure face is there
   #shell: "/usr/bin/ndnping -c 5 /ndn/edu/wustl >& /dev/null"
   shell: "/usr/bin/ndnping -c 5 /ndn/edu/wustl "
-  when: ec2_tag_group is defined and (ec2_tag_group == "ndnrtc-producer")
+  when: ec2_tag_group is defined and ((ec2_tag_group == "ndnrtc-producer") or (ec2_tag_group == "validated-image-producer"))
 
 - local_action: copy content="{{ inventory_hostname }}" dest=./producer_hostname
-  when: ec2_tag_group is defined and (ec2_tag_group == "ndnrtc-producer")
+  when: ec2_tag_group is defined and ((ec2_tag_group == "ndnrtc-producer") or (ec2_tag_group == "validated-image-producer"))
 
 - name: copy producer_hostname file to WU
   copy: dest=/home/ndnops/producer_hostname src=./producer_hostname owner=ndnops mode=644

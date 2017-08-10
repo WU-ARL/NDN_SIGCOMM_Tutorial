@@ -1,0 +1,17 @@
+#!/bin/bash
+
+#cd ndnrtc
+#./certHost.sh
+#
+#./startNFD.sh
+
+# Are we producer or consumer?
+if [ "{{ec2_tag_group}}" = "validated-image-consumer" ]
+then
+  ./runConsumerOfWU.sh
+fi
+if [ "{{ec2_tag_group}}" = "validated-image-producer" ]
+then
+  ./runProducer.sh
+fi
+
