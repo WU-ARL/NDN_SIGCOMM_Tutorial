@@ -21,6 +21,9 @@ ansible-playbook -u ubuntu --ssh-extra-args="-i ~/.ssh/aws_wu_jdd.pem -o \"Stric
 
 ansible-playbook -u ubuntu --ssh-extra-args="-i ~/.ssh/aws_wu_jdd.pem -o \"StrictHostKeyChecking no\"" --ask-vault-pass -i inventory terminate.yml
 
+ansible-playbook -u ubuntu --ssh-extra-args="-i ~/.ssh/aws_wu_jdd.pem -o \"StrictHostKeyChecking no\"" --ask-vault-pass -i inventory --extra-vars "suffix=123" runDemoValidation.yml
+
+ansible-playbook -u ubuntu --ssh-extra-args="-i ~/.ssh/aws_wu_jdd.pem -o \"StrictHostKeyChecking no\"" --ask-vault-pass -i inventory killChunks.yml
 ansible-playbook -u ubuntu --ssh-extra-args="-i ~/.ssh/aws_wu_jdd.pem -o \"StrictHostKeyChecking no\"" --ask-vault-pass -i inventory --extra-vars "suffix=123" runDemoChunks.yml
 
 ansible-playbook -u ubuntu --ssh-extra-args="-i ~/.ssh/aws_wu_jdd.pem -o \"StrictHostKeyChecking no\"" --ask-vault-pass -i inventory killChunks.yml

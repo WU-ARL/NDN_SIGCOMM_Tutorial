@@ -6,21 +6,21 @@
   when: inventory_hostname != "WU"
 
 
-- name: create runClient.sh
-  template: src=runClient.sh.j2 dest=/home/ubuntu/validation/runClient.sh owner=ubuntu group=ubuntu mode=755
-  when: inventory_hostname != "WU"
+#- name: create runClient.sh
+#  template: src=runClient.sh.j2 dest=/home/ubuntu/validation/runClient.sh owner=ubuntu group=ubuntu mode=755
+#  when: inventory_hostname != "WU"
 
 #- name: create certHost.sh
 #  template: src=certHost.sh.j2 dest=/home/ubuntu/validation/certHost.sh owner=ubuntu group=ubuntu mode=755
 #  when: inventory_hostname != "WU"
 
-- name: create runProducer.sh
-  template: src=runProducer.sh.j2 dest=/home/ubuntu/validation/runProducer.sh owner=ubuntu group=ubuntu mode=755
-  when: inventory_hostname != "WU"
-
-- name: create runConsumerOfWU.sh
-  template: src=runConsumerOfWU.sh.j2 dest=/home/ubuntu/validation/runConsumerOfWU.sh owner=ubuntu group=ubuntu mode=755
-  when: inventory_hostname != "WU"
+#- name: create runProducer.sh
+#  template: src=runProducer.sh.j2 dest=/home/ubuntu/validation/runProducer.sh owner=ubuntu group=ubuntu mode=755
+#  when: inventory_hostname != "WU"
+#
+#- name: create runConsumerOfWU.sh
+#  template: src=runConsumerOfWU.sh.j2 dest=/home/ubuntu/validation/runConsumerOfWU.sh owner=ubuntu group=ubuntu mode=755
+#  when: inventory_hostname != "WU"
 
 - name: create startNFD.sh
   template: src=startNFD.sh.j2 dest=/home/ubuntu/validation/startNFD.sh owner=ubuntu group=ubuntu mode=755
@@ -38,23 +38,67 @@
     chdir: /home/ubuntu/validation
   when: inventory_hostname != "WU"
 
-- name: dump cert
-  script: roles/validation/files/dumpIdAndCert.sh 
-  #args:
-  #  chdir: /home/ubuntu/validation
+#- name: dump cert
+#  script: roles/validation/files/dumpIdAndCert.sh 
+#  #args:
+#  #  chdir: /home/ubuntu/validation
+#  when: (inventory_hostname != "WU") and (ec2_tag_group  == "validated-image-producer" )
+
+#- fetch: 
+#    src: /home/ubuntu/ndn.cert
+#    dest: roles/validation/files/producer.ndn.cert
+#    flat: yes
+#  when: (inventory_hostname != "WU") and (ec2_tag_group  == "validated-image-producer" )
+
+#- name: copy producer cert to consumers
+#- copy: 
+#    dest: /home/ubuntu/validation/producer.ndn.cert 
+#    src: roles/validation/files/producer.ndn.cert
+#    mode: 0644
+#  when: (inventory_hostname != "WU") and (ec2_tag_group  == "validated-image-consumer" )
+
+- script: roles/validation/files/createProducerCerts.sh
+  args: 
+    chdir: /home/ubuntu/validation
   when: (inventory_hostname != "WU") and (ec2_tag_group  == "validated-image-producer" )
 
 - fetch: 
-    src: /home/ubuntu/ndn.cert
-    dest: roles/validation/files/producer.ndn.cert
+    src: /home/ubuntu/validation/producer1.cert
+    dest: roles/validation/files/producer1.cert
+    flat: yes
+  when: (inventory_hostname != "WU") and (ec2_tag_group  == "validated-image-producer" )
+
+- fetch: 
+    src: /home/ubuntu/validation/producer2.cert
+    dest: roles/validation/files/producer2.cert
+    flat: yes
+  when: (inventory_hostname != "WU") and (ec2_tag_group  == "validated-image-producer" )
+
+- fetch: 
+    src: /home/ubuntu/validation/producer3.cert
+    dest: roles/validation/files/producer3.cert
+    flat: yes
+  when: (inventory_hostname != "WU") and (ec2_tag_group  == "validated-image-producer" )
+
+- fetch: 
+    src: /home/ubuntu/validation/producer4.cert
+    dest: roles/validation/files/producer4.cert
     flat: yes
   when: (inventory_hostname != "WU") and (ec2_tag_group  == "validated-image-producer" )
 
 #- name: copy producer cert to consumers
+#- copy: 
+#    dest: /home/ubuntu/validation/producer.ndn.cert 
+#    src: roles/validation/files/producer.ndn.cert
+#    mode: 0644
+#  when: (inventory_hostname != "WU") and (ec2_tag_group  == "validated-image-consumer" )
+
+#- name: copy producer certs to consumers
 - copy: 
-    dest: /home/ubuntu/validation/producer.ndn.cert 
-    src: roles/validation/files/producer.ndn.cert
+    dest: /home/ubuntu/validation/
+    src: "{{ item }}"
     mode: 0644
+  with_fileglob: roles/validation/files/producer*.cert
   when: (inventory_hostname != "WU") and (ec2_tag_group  == "validated-image-consumer" )
 
 #- name: copy image files to producers
@@ -65,10 +109,11 @@
   with_fileglob: roles/validation/files/*.png
   when: (inventory_hostname != "WU") and (ec2_tag_group  == "validated-image-producer" )
 
-#- name: copy config file to consumers
+#- name: copy config files to consumers
 - copy: 
-    dest: /home/ubuntu/validation/consumer.cfg
-    src: roles/validation/files/consumer.cfg
+    dest: /home/ubuntu/validation/
+    src: "{{ item }}"
     mode: 0644
+  with_fileglob: roles/validation/files/consumer*.cfg
   when: (inventory_hostname != "WU") and (ec2_tag_group  == "validated-image-consumer" )
 

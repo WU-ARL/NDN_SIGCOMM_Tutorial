@@ -27,7 +27,7 @@
           volume_size: 20
           delete_on_termination: true
       region: "{{ ec2_region_wu }}"
-      instance_tags: "{'host_gw':'{{ ec2_host_gw_wu }}' ,'host_gw_prefix':'{{ ec2_host_gw_prefix_wu }}' ,'ansible_group':'wu_host', 'type':'{{ ec2_instance_type }}', 'group':'validated-image-producer', 'Name':'wu_host_''{{ local_user_name }}'}"
+      instance_tags: "{'host_gw':'{{ ec2_host_gw_wu }}' ,'host_gw_prefix':'{{ ec2_host_gw_prefix_wu }}' ,'ansible_group':'wu_host', 'type':'{{ ec2_instance_type }}', 'group':'validated-image-producer', 'Name':'Producer'}"
       count: "{{ ec2_host_count }}"
       wait: true
     register: ec2
@@ -46,7 +46,7 @@
           volume_size: 20
           delete_on_termination: true
       region: "{{ ec2_region_arizona }}"
-      instance_tags: "{'host_gw':'{{ ec2_host_gw_arizona }}' ,'host_gw_prefix':'{{ ec2_host_gw_prefix_arizona }}' , 'ansible_group':'arizona_host', 'type':'{{ ec2_instance_type }}', 'group':'validated-image-consumer', 'Name':'arizona_host_''{{ local_user_name }}'}"
+      instance_tags: "{'host_gw':'{{ ec2_host_gw_arizona }}' ,'host_gw_prefix':'{{ ec2_host_gw_prefix_arizona }}' , 'ansible_group':'arizona_host', 'type':'{{ ec2_instance_type }}', 'group':'validated-image-consumer', 'Name':'arizona_consumer'}"
       count: "{{ ec2_host_count }}"
       wait: true
     register: ec2
