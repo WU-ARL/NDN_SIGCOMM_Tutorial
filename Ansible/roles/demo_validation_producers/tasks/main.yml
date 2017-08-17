@@ -1,0 +1,6 @@
+---
+# tasks file for demo_validation_producers
+
+- name: run Producer script on producer
+  script: roles/demo_validation/files/runProducers.sh {{ suffix }}
+  when: (inventory_hostname != "WU") and (ec2_tag_group  == "validated-image-producer" )

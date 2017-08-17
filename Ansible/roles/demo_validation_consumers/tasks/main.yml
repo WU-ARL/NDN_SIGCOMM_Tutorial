@@ -1,0 +1,6 @@
+---
+# tasks file for demo_validation_consumers
+
+- name: run Consumer script on consumers
+  script: roles/demo_validation/files/runConsumers.sh {{ suffix }}
+  when: (inventory_hostname != "WU") and (ec2_tag_group  == "validated-image-consumer" )
