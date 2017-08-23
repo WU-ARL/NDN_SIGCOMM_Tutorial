@@ -8,6 +8,9 @@ fi
 
 killall ndncatchunks
 
+# ./startNFD.sh
+
+cp /Users/jdd/Google\ Drive/NDN/NDN_CRI/NDN_SIGCOMM_Tutorial/Ansible/roles/validation/files/producer*.cert PRODUCERS
 pushd CONSUMER1/
 ./runConsumers.sh ${SUFFIX}
 popd 

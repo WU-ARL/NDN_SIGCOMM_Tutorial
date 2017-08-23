@@ -58,6 +58,7 @@ ec2_region_tno: eu-west-2
 
 # Norway
 ec2_region_ntnu: eu-west-2
+#ec2_region_ntnu: eu-west-1
 
 # Portugal
 ec2_region_copelabs: eu-central-1
@@ -88,6 +89,7 @@ ec2_region_indonesia: ap-southeast-1
 ec2_region_wu: us-east-1
 ec2_region_memphis: us-east-2
 ec2_region_arizona: us-west-1
+#ec2_region_arizona: us-west-2
 ec2_region_byu: us-west-1
 ec2_region_csu: us-west-1
 ec2_region_uiuc: us-east-2
@@ -110,9 +112,11 @@ ec2_region_nist: us-east-1
 #ec2_region: us-east-1
 #ec2_image_wu: ami-4b133c5d
 #ec2_image_wu: ami-2067405b
-ec2_image_wu: ami-d26141a9
-ec2_image_neu: ami-d26141a9
-ec2_image_nist: ami-d26141a9
+#us-east-1_ec2_image_with_ndntools: ami-b1615cca
+#ec2_image_wu: ami-d26141a9
+ec2_image_wu: ami-b1615cca
+ec2_image_neu: ami-b1615cca
+ec2_image_nist: ami-b1615cca
 
 
 # US Ohio: us-east-2
@@ -123,9 +127,11 @@ ec2_image_nist: ami-d26141a9
 
 #ec2_image_memphis: ami-019abc64
 #ec2_image_memphis: ami-211b3b44
-ec2_image_memphis: ami-9feacafa
-ec2_image_uiuc: ami-9feacafa
-ec2_image_michigan: ami-9feacafa
+#us-east-2_ec2_image_with_ndntools: ami-ff72519a
+#ec2_image_memphis: ami-9feacafa
+ec2_image_memphis: ami-ff72519a
+ec2_image_uiuc: ami-ff72519a
+ec2_image_michigan: ami-ff72519a
 
 # US N. California: us-west-1
 ## N.California.14.04
@@ -134,13 +140,14 @@ ec2_image_michigan: ami-9feacafa
 #ec2_region: us-west-1
 #ec2_image_arizona: ami-89f3dee9
 #ec2_image_arizona: ami-f1c6ee91
-ec2_image_arizona: ami-0085ad60
-ec2_image_byu: ami-0085ad60
-ec2_image_csu: ami-0085ad60
-ec2_image_uci: ami-0085ad60 
-ec2_image_ucla: ami-0085ad60 
-ec2_image_remap: ami-0085ad60 
-ec2_image_caida: ami-0085ad60
+#us-west-1_image_with_ndntools: ami-86ebc1e6
+ec2_image_arizona: ami-86ebc1e6
+ec2_image_byu: ami-86ebc1e6
+ec2_image_csu: ami-86ebc1e6
+ec2_image_uci: ami-86ebc1e6 
+ec2_image_ucla: ami-86ebc1e6 
+ec2_image_remap: ami-86ebc1e6 
+ec2_image_caida: ami-86ebc1e6
 
 
 # US Oregon: us-west-2
@@ -152,7 +159,10 @@ ec2_image_caida: ami-0085ad60
 ## sa-east-1 14.04
 # ec2_image: ami-d1a7ccbd
 # ndn ami: ami-727e081e
-ec2_image_ufpa: ami-727e081e
+#sa-east-1_image_with_ndntools: ami-fa8bfa96
+
+#ec2_image_ufpa: ami-727e081e
+ec2_image_ufpa: ami-fa8bfa96
 
 # CA Canada (central): ca-central-1
 # ec2_image: ami-beea56da
@@ -165,35 +175,44 @@ ec2_image_ufpa: ami-727e081e
 # ndn ami: ami-928d22fd
 # ndn ami: ami-343f905b
 #ec2_image_basel: ami-928d22fd
+#eu-central-1_image_with_ndntools: ami-a4d179cb
 
 
-ec2_image_basel: ami-343f905b
-ec2_image_bern: ami-343f905b
-ec2_image_goettingen: ami-343f905b
-ec2_image_urjc: ami-343f905b
-ec2_image_afa: ami-343f905b
-ec2_image_padua: ami-343f905b
-ec2_image_copelabs: ami-343f905b
-ec2_image_minho: ami-343f905b
+
+#ec2_image_basel: ami-343f905b
+ec2_image_basel: ami-a4d179cb
+ec2_image_bern: ami-a4d179cb
+ec2_image_goettingen: ami-a4d179cb
+ec2_image_urjc: ami-a4d179cb
+ec2_image_afa: ami-a4d179cb
+ec2_image_padua: ami-a4d179cb
+ec2_image_copelabs: ami-a4d179cb
+ec2_image_minho: ami-a4d179cb
 
 # EU London: eu-west-2
 # ec2_image: ami-d67c6ab2
 # ndn ami: ami-b9d1c0dd
 # ec2_image_systemx: ami-af3f2ecb
+#eu-west-2_image_with_ndntools: ami-4ca2b328
 
-ec2_image_systemx: ami-b9d1c0dd
-ec2_image_lip6: ami-b9d1c0dd
-ec2_image_tno: ami-b9d1c0dd
-ec2_image_ntnu: ami-b9d1c0dd
+
+#ec2_image_systemx: ami-b9d1c0dd
+ec2_image_systemx: ami-4ca2b328
+ec2_image_lip6: ami-4ca2b328
+ec2_image_tno: ami-4ca2b328
+ec2_image_ntnu: ami-4ca2b328
 
 # AP Singapore: ap-southeast-1
 # ec2_image: ami-5d72ff3e
 # ndn ami: ami-34e27c57
 #ec2_image_msu: ami-24831c47
 
-ec2_image_msu: ami-34e27c57
-ec2_image_srru: ami-34e27c57
-ec2_image_indonesia: ami-34e27c57
+#ap-southeast-1_image_with_ndntools: ami-f3385c90
+
+#ec2_image_msu: ami-f3385c90
+ec2_image_msu: ami-f3385c90
+ec2_image_srru: ami-f3385c90
+ec2_image_indonesia: ami-f3385c90
 
 # AP Sydney: ap-southeast-2
 # ec2_image: ami-21766642
@@ -201,18 +220,24 @@ ec2_image_indonesia: ami-34e27c57
 # AP Seoul: ap-northeast-2
 # ec2_image: ami-3fca1551
 # ndn ami: ami-5e13ca30
-ec2_image_kisti: ami-5e13ca30
-ec2_image_anyang: ami-5e13ca30
+#ap-northeast-2_image_with_ndntools: ami-87bd65e9
+
+#ec2_image_kisti: ami-5e13ca30
+ec2_image_kisti: ami-87bd65e9
+ec2_image_anyang: ami-87bd65e9
 
 # AP Tokyo: ap-northeast-1
 # ec2_image: ami-8c4055eb
 # ndn ami: ami-24e60f42
-ec2_image_cnic: ami-24e60f42
-ec2_image_bupt: ami-24e60f42
-ec2_image_pkusz: ami-24e60f42
-ec2_image_tongji: ami-24e60f42
-ec2_image_waseda: ami-24e60f42
-ec2_image_osaka: ami-24e60f42
+#ap-northeast-1_image_with_ndntools: ami-b47889d2
+
+#ec2_image_cnic: ami-24e60f42
+ec2_image_cnic: ami-b47889d2
+ec2_image_bupt: ami-b47889d2
+ec2_image_pkusz: ami-b47889d2
+ec2_image_tongji: ami-b47889d2
+ec2_image_waseda: ami-b47889d2
+ec2_image_osaka: ami-b47889d2
 
 # AP Mumbai: ap-south-1
 # ec2_image: ami-23daa54c
@@ -302,6 +327,8 @@ ec2_keypair: aws_wu_jdd
 ec2_security_group: ndn-clients
 #ec2_security_group: default
 ec2_host_count: 1
+ec2_producer_count: 1
+ec2_consumer_count: 1
 ec2_tag: ndn-clients-WU
 ec2_tag_name_prefix: jdd
 ec2_hosts: all

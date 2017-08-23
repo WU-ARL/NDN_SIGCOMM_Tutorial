@@ -28,7 +28,7 @@
           delete_on_termination: true
       region: "{{ ec2_region_wu }}"
       instance_tags: "{'host_gw':'{{ ec2_host_gw_wu }}' ,'host_gw_prefix':'{{ ec2_host_gw_prefix_wu }}' ,'ansible_group':'wu_host', 'type':'{{ ec2_instance_type }}', 'group':'validated-image-producer', 'Name':'Producer'}"
-      count: "{{ ec2_host_count }}"
+      count: "{{ ec2_producer_count }}"
       wait: true
     register: ec2
 
@@ -47,9 +47,674 @@
           delete_on_termination: true
       region: "{{ ec2_region_arizona }}"
       instance_tags: "{'host_gw':'{{ ec2_host_gw_arizona }}' ,'host_gw_prefix':'{{ ec2_host_gw_prefix_arizona }}' , 'ansible_group':'arizona_host', 'type':'{{ ec2_instance_type }}', 'group':'validated-image-consumer', 'Name':'arizona_consumer'}"
-      count: "{{ ec2_host_count }}"
+      count:  "{{ ec2_consumer_count }}"
       wait: true
     register: ec2
+
+  - name: Launch end host for BYU
+    ec2:
+      access_key: "{{ ec2_access_key }}"
+      secret_key: "{{ ec2_secret_key }}"
+      keypair: "{{ ec2_keypair }}"
+      group: "{{ ec2_security_group }}"
+      type: "{{ ec2_instance_type }}"
+      image: "{{ ec2_image_byu }}"
+      volumes:
+        - device_name: /dev/sda1
+          volume_type: gp2
+          volume_size: 20
+          delete_on_termination: true
+      region: "{{ ec2_region_byu }}"
+      instance_tags: "{'host_gw':'{{ ec2_host_gw_byu }}' ,'host_gw_prefix':'{{ ec2_host_gw_prefix_byu }}' ,'ansible_group':'byu_host', 'type':'{{ ec2_instance_type }}', 'group':'validated-image-consumer', 'Name':'byu_consumer'}"
+      count:  "{{ ec2_consumer_count }}"
+      wait: true
+    register: ec2
+
+  - name: Launch end host for CSU
+    ec2:
+      access_key: "{{ ec2_access_key }}"
+      secret_key: "{{ ec2_secret_key }}"
+      keypair: "{{ ec2_keypair }}"
+      group: "{{ ec2_security_group }}"
+      type: "{{ ec2_instance_type }}"
+      image: "{{ ec2_image_csu }}"
+      volumes:
+        - device_name: /dev/sda1
+          volume_type: gp2
+          volume_size: 20
+          delete_on_termination: true
+      region: "{{ ec2_region_csu }}"
+      instance_tags: "{'host_gw':'{{ ec2_host_gw_csu }}' ,'host_gw_prefix':'{{ ec2_host_gw_prefix_csu }}' ,'ansible_group':'csu_host', 'type':'{{ ec2_instance_type }}', 'group':'validated-image-consumer', 'Name':'csu_consumer'}"
+      count:  "{{ ec2_consumer_count }}"
+      wait: true
+    register: ec2
+
+  - name: Launch end host for UIUC
+    ec2:
+      access_key: "{{ ec2_access_key }}"
+      secret_key: "{{ ec2_secret_key }}"
+      keypair: "{{ ec2_keypair }}"
+      group: "{{ ec2_security_group }}"
+      type: "{{ ec2_instance_type }}"
+      image: "{{ ec2_image_uiuc }}"
+      volumes:
+        - device_name: /dev/sda1
+          volume_type: gp2
+          volume_size: 20
+          delete_on_termination: true
+      region: "{{ ec2_region_uiuc }}"
+      instance_tags: "{'host_gw':'{{ ec2_host_gw_uiuc }}' ,'host_gw_prefix':'{{ ec2_host_gw_prefix_uiuc }}' ,'ansible_group':'uiuc_host', 'type':'{{ ec2_instance_type }}', 'group':'validated-image-consumer', 'Name':'uiuc_consumer'}"
+      count: "{{ ec2_consumer_count }}"
+      wait: true
+    register: ec2
+
+  - name: Launch end host for MEMPHIS
+    ec2:
+      access_key: "{{ ec2_access_key }}"
+      secret_key: "{{ ec2_secret_key }}"
+      keypair: "{{ ec2_keypair }}"
+      group: "{{ ec2_security_group }}"
+      type: "{{ ec2_instance_type }}"
+      image: "{{ ec2_image_memphis }}"
+      volumes:
+        - device_name: /dev/sda1
+          volume_type: gp2
+          volume_size: 20
+          delete_on_termination: true
+      region: "{{ ec2_region_memphis }}"
+      instance_tags: "{'host_gw':'{{ ec2_host_gw_memphis }}' ,'host_gw_prefix':'{{ ec2_host_gw_prefix_memphis }}' ,'ansible_group':'memphis_host', 'type':'{{ ec2_instance_type }}', 'group':'validated-image-consumer', 'Name':'memphis_consumer'}"
+      count: "{{ ec2_consumer_count }}"
+      wait: true
+    register: ec2
+
+  - name: Launch end host for NEU
+    ec2:
+      access_key: "{{ ec2_access_key }}"
+      secret_key: "{{ ec2_secret_key }}"
+      keypair: "{{ ec2_keypair }}"
+      group: "{{ ec2_security_group }}"
+      type: "{{ ec2_instance_type }}"
+      image: "{{ ec2_image_neu }}"
+      volumes:
+        - device_name: /dev/sda1
+          volume_type: gp2
+          volume_size: 20
+          delete_on_termination: true
+      region: "{{ ec2_region_neu }}"
+      instance_tags: "{'host_gw':'{{ ec2_host_gw_neu }}' ,'host_gw_prefix':'{{ ec2_host_gw_prefix_neu }}' ,'ansible_group':'neu_host', 'type':'{{ ec2_instance_type }}', 'group':'validated-image-consumer', 'Name':'neu_consumer'}"
+      count: "{{ ec2_consumer_count }}"
+      wait: true
+    register: ec2
+
+  - name: Launch end host for UCI
+    ec2:
+      access_key: "{{ ec2_access_key }}"
+      secret_key: "{{ ec2_secret_key }}"
+      keypair: "{{ ec2_keypair }}"
+      group: "{{ ec2_security_group }}"
+      type: "{{ ec2_instance_type }}"
+      image: "{{ ec2_image_uci }}"
+      volumes:
+        - device_name: /dev/sda1
+          volume_type: gp2
+          volume_size: 20
+          delete_on_termination: true
+      region: "{{ ec2_region_uci }}"
+      instance_tags: "{'host_gw':'{{ ec2_host_gw_uci }}' ,'host_gw_prefix':'{{ ec2_host_gw_prefix_uci }}' ,'ansible_group':'uci_host', 'type':'{{ ec2_instance_type }}', 'group':'validated-image-consumer', 'Name':'uci_consumer'}"
+      count: "{{ ec2_consumer_count }}"
+      wait: true
+    register: ec2
+
+  - name: Launch end host for UCLA
+    ec2:
+      access_key: "{{ ec2_access_key }}"
+      secret_key: "{{ ec2_secret_key }}"
+      keypair: "{{ ec2_keypair }}"
+      group: "{{ ec2_security_group }}"
+      type: "{{ ec2_instance_type }}"
+      image: "{{ ec2_image_ucla }}"
+      volumes:
+        - device_name: /dev/sda1
+          volume_type: gp2
+          volume_size: 20
+          delete_on_termination: true
+      region: "{{ ec2_region_ucla }}"
+      instance_tags: "{'host_gw':'{{ ec2_host_gw_ucla }}' ,'host_gw_prefix':'{{ ec2_host_gw_prefix_ucla }}' ,'ansible_group':'ucla_host', 'type':'{{ ec2_instance_type }}', 'group':'validated-image-consumer', 'Name':'ucla_consumer'}"
+      count: "{{ ec2_consumer_count }}"
+      wait: true
+    register: ec2
+
+  - name: Launch end host for REMAP
+    ec2:
+      access_key: "{{ ec2_access_key }}"
+      secret_key: "{{ ec2_secret_key }}"
+      keypair: "{{ ec2_keypair }}"
+      group: "{{ ec2_security_group }}"
+      type: "{{ ec2_instance_type }}"
+      image: "{{ ec2_image_remap }}"
+      volumes:
+        - device_name: /dev/sda1
+          volume_type: gp2
+          volume_size: 20
+          delete_on_termination: true
+      region: "{{ ec2_region_remap }}"
+      instance_tags: "{'host_gw':'{{ ec2_host_gw_remap }}' ,'host_gw_prefix':'{{ ec2_host_gw_prefix_remap }}' ,'ansible_group':'remap_host', 'type':'{{ ec2_instance_type }}', 'group':'validated-image-consumer', 'Name':'remap_consumer'}"
+      count: "{{ ec2_consumer_count }}"
+      wait: true
+    register: ec2
+
+  - name: Launch end host for MICHIGAN
+    ec2:
+      access_key: "{{ ec2_access_key }}"
+      secret_key: "{{ ec2_secret_key }}"
+      keypair: "{{ ec2_keypair }}"
+      group: "{{ ec2_security_group }}"
+      type: "{{ ec2_instance_type }}"
+      image: "{{ ec2_image_michigan }}"
+      volumes:
+        - device_name: /dev/sda1
+          volume_type: gp2
+          volume_size: 20
+          delete_on_termination: true
+      region: "{{ ec2_region_michigan }}"
+      instance_tags: "{'host_gw':'{{ ec2_host_gw_michigan }}' ,'host_gw_prefix':'{{ ec2_host_gw_prefix_michigan }}' ,'ansible_group':'michigan_host', 'type':'{{ ec2_instance_type }}', 'group':'validated-image-consumer', 'Name':'michigan_consumer'}"
+      count:  "{{ ec2_consumer_count }}"
+      wait: true
+    register: ec2
+
+#  - name: Launch end host for NIST
+#    ec2:
+#      access_key: "{{ ec2_access_key }}"
+#      secret_key: "{{ ec2_secret_key }}"
+#      keypair: "{{ ec2_keypair }}"
+#      group: "{{ ec2_security_group }}"
+#      type: "{{ ec2_instance_type }}"
+#      image: "{{ ec2_image_nist }}"
+#      volumes:
+#        - device_name: /dev/sda1
+#          volume_type: gp2
+#          volume_size: 20
+#          delete_on_termination: true
+#      region: "{{ ec2_region_nist }}"
+#      instance_tags: "{'host_gw':'{{ ec2_host_gw_nist }}' ,'host_gw_prefix':'{{ ec2_host_gw_prefix_nist }}' ,'ansible_group':'nist_host', 'type':'{{ ec2_instance_type }}', 'group':'validated-image-consumer', 'Name':'nist_consumer'}"
+#      count: "{{ ec2_consumer_count }}"
+#      wait: true
+#    register: ec2
+
+  - name: Launch end host for CAIDA
+    ec2:
+      access_key: "{{ ec2_access_key }}"
+      secret_key: "{{ ec2_secret_key }}"
+      keypair: "{{ ec2_keypair }}"
+      group: "{{ ec2_security_group }}"
+      type: "{{ ec2_instance_type }}"
+      image: "{{ ec2_image_caida }}"
+      volumes:
+        - device_name: /dev/sda1
+          volume_type: gp2
+          volume_size: 20
+          delete_on_termination: true
+      region: "{{ ec2_region_caida }}"
+      instance_tags: "{'host_gw':'{{ ec2_host_gw_caida }}' ,'host_gw_prefix':'{{ ec2_host_gw_prefix_caida }}' ,'ansible_group':'caida_host', 'type':'{{ ec2_instance_type }}', 'group':'validated-image-consumer', 'Name':'caida_consumer'}"
+      count:  "{{ ec2_consumer_count }}"
+      wait: true
+    register: ec2
+
+  - name: Launch end host for UFPA
+    ec2:
+      access_key: "{{ ec2_access_key }}"
+      secret_key: "{{ ec2_secret_key }}"
+      keypair: "{{ ec2_keypair }}"
+      group: "{{ ec2_security_group }}"
+      type: "{{ ec2_instance_type }}"
+      image: "{{ ec2_image_ufpa }}"
+      volumes:
+        - device_name: /dev/sda1
+          volume_type: gp2
+          volume_size: 20
+          delete_on_termination: true
+      region: "{{ ec2_region_ufpa }}"
+      instance_tags: "{'host_gw':'{{ ec2_host_gw_ufpa }}' ,'host_gw_prefix':'{{ ec2_host_gw_prefix_ufpa }}' ,'ansible_group':'ufpa_host', 'type':'{{ ec2_instance_type }}', 'group':'validated-image-consumer', 'Name':'ufpa_consumer'}"
+      count:  "{{ ec2_consumer_count }}"
+      wait: true
+    register: ec2
+
+  - name: Launch end host for BASEL
+    ec2:
+      access_key: "{{ ec2_access_key }}"
+      secret_key: "{{ ec2_secret_key }}"
+      keypair: "{{ ec2_keypair }}"
+      group: "{{ ec2_security_group }}"
+      type: "{{ ec2_instance_type }}"
+      image: "{{ ec2_image_basel }}"
+      volumes:
+        - device_name: /dev/sda1
+          volume_type: gp2
+          volume_size: 20
+          delete_on_termination: true
+      region: "{{ ec2_region_basel }}"
+      instance_tags: "{'host_gw':'{{ ec2_host_gw_basel }}' ,'host_gw_prefix':'{{ ec2_host_gw_prefix_basel }}' ,'ansible_group':'basel_host', 'type':'{{ ec2_instance_type }}', 'group':'validated-image-consumer', 'Name':'basel_consumer'}"
+      count: "{{ ec2_consumer_count }}"
+      wait: true
+    register: ec2
+
+  - name: Launch end host for BERN
+    ec2:
+      access_key: "{{ ec2_access_key }}"
+      secret_key: "{{ ec2_secret_key }}"
+      keypair: "{{ ec2_keypair }}"
+      group: "{{ ec2_security_group }}"
+      type: "{{ ec2_instance_type }}"
+      image: "{{ ec2_image_bern }}"
+      volumes:
+        - device_name: /dev/sda1
+          volume_type: gp2
+          volume_size: 20
+          delete_on_termination: true
+      region: "{{ ec2_region_bern }}"
+      instance_tags: "{'host_gw':'{{ ec2_host_gw_bern }}' ,'host_gw_prefix':'{{ ec2_host_gw_prefix_bern }}' ,'ansible_group':'bern_host', 'type':'{{ ec2_instance_type }}', 'group':'validated-image-consumer', 'Name':'bern_consumer'}"
+      count: "{{ ec2_consumer_count }}"
+      wait: true
+    register: ec2
+
+  - name: Launch end host for GOETTINGEN
+    ec2:
+      access_key: "{{ ec2_access_key }}"
+      secret_key: "{{ ec2_secret_key }}"
+      keypair: "{{ ec2_keypair }}"
+      group: "{{ ec2_security_group }}"
+      type: "{{ ec2_instance_type }}"
+      image: "{{ ec2_image_goettingen }}"
+      volumes:
+        - device_name: /dev/sda1
+          volume_type: gp2
+          volume_size: 20
+          delete_on_termination: true
+      region: "{{ ec2_region_goettingen }}"
+      instance_tags: "{'host_gw':'{{ ec2_host_gw_goettingen }}' ,'host_gw_prefix':'{{ ec2_host_gw_prefix_goettingen }}' ,'ansible_group':'goettingen_host', 'type':'{{ ec2_instance_type }}', 'group':'validated-image-consumer', 'Name':'goettingen_consumer'}"
+      count: "{{ ec2_consumer_count }}"
+      wait: true
+    register: ec2
+
+  - name: Launch end host for URJC
+    ec2:
+      access_key: "{{ ec2_access_key }}"
+      secret_key: "{{ ec2_secret_key }}"
+      keypair: "{{ ec2_keypair }}"
+      group: "{{ ec2_security_group }}"
+      type: "{{ ec2_instance_type }}"
+      image: "{{ ec2_image_urjc }}"
+      volumes:
+        - device_name: /dev/sda1
+          volume_type: gp2
+          volume_size: 20
+          delete_on_termination: true
+      region: "{{ ec2_region_urjc }}"
+      instance_tags: "{'host_gw':'{{ ec2_host_gw_urjc }}' ,'host_gw_prefix':'{{ ec2_host_gw_prefix_urjc }}' ,'ansible_group':'urjc_host', 'type':'{{ ec2_instance_type }}', 'group':'validated-image-consumer', 'Name':'urjc_consumer'}"
+      count: "{{ ec2_consumer_count }}"
+      wait: true
+    register: ec2
+
+  - name: Launch end host for AFA
+    ec2:
+      access_key: "{{ ec2_access_key }}"
+      secret_key: "{{ ec2_secret_key }}"
+      keypair: "{{ ec2_keypair }}"
+      group: "{{ ec2_security_group }}"
+      type: "{{ ec2_instance_type }}"
+      image: "{{ ec2_image_afa }}"
+      volumes:
+        - device_name: /dev/sda1
+          volume_type: gp2
+          volume_size: 20
+          delete_on_termination: true
+      region: "{{ ec2_region_afa }}"
+      instance_tags: "{'host_gw':'{{ ec2_host_gw_afa }}' ,'host_gw_prefix':'{{ ec2_host_gw_prefix_afa }}' ,'ansible_group':'afa_host', 'type':'{{ ec2_instance_type }}', 'group':'validated-image-consumer', 'Name':'afa_consumer'}"
+      count: "{{ ec2_consumer_count }}"
+      wait: true
+    register: ec2
+
+  - name: Launch end host for PADUA
+    ec2:
+      access_key: "{{ ec2_access_key }}"
+      secret_key: "{{ ec2_secret_key }}"
+      keypair: "{{ ec2_keypair }}"
+      group: "{{ ec2_security_group }}"
+      type: "{{ ec2_instance_type }}"
+      image: "{{ ec2_image_padua }}"
+      volumes:
+        - device_name: /dev/sda1
+          volume_type: gp2
+          volume_size: 20
+          delete_on_termination: true
+      region: "{{ ec2_region_padua }}"
+      instance_tags: "{'host_gw':'{{ ec2_host_gw_padua }}' ,'host_gw_prefix':'{{ ec2_host_gw_prefix_padua }}' ,'ansible_group':'padua_host', 'type':'{{ ec2_instance_type }}', 'group':'validated-image-consumer', 'Name':'padua_consumer'}"
+      count: "{{ ec2_consumer_count }}"
+      wait: true
+    register: ec2
+
+  - name: Launch end host for COPELABS
+    ec2:
+      access_key: "{{ ec2_access_key }}"
+      secret_key: "{{ ec2_secret_key }}"
+      keypair: "{{ ec2_keypair }}"
+      group: "{{ ec2_security_group }}"
+      type: "{{ ec2_instance_type }}"
+      image: "{{ ec2_image_copelabs }}"
+      volumes:
+        - device_name: /dev/sda1
+          volume_type: gp2
+          volume_size: 20
+          delete_on_termination: true
+      region: "{{ ec2_region_copelabs }}"
+      instance_tags: "{'host_gw':'{{ ec2_host_gw_copelabs }}' ,'host_gw_prefix':'{{ ec2_host_gw_prefix_copelabs }}' ,'ansible_group':'copelabs_host', 'type':'{{ ec2_instance_type }}', 'group':'validated-image-consumer', 'Name':'copelabs_consumer'}"
+      count: "{{ ec2_consumer_count }}"
+      wait: true
+    register: ec2
+
+  - name: Launch end host for MINHO
+    ec2:
+      access_key: "{{ ec2_access_key }}"
+      secret_key: "{{ ec2_secret_key }}"
+      keypair: "{{ ec2_keypair }}"
+      group: "{{ ec2_security_group }}"
+      type: "{{ ec2_instance_type }}"
+      image: "{{ ec2_image_minho }}"
+      volumes:
+        - device_name: /dev/sda1
+          volume_type: gp2
+          volume_size: 20
+          delete_on_termination: true
+      region: "{{ ec2_region_minho }}"
+      instance_tags: "{'host_gw':'{{ ec2_host_gw_minho }}' ,'host_gw_prefix':'{{ ec2_host_gw_prefix_minho }}' ,'ansible_group':'minho_host', 'type':'{{ ec2_instance_type }}', 'group':'validated-image-consumer', 'Name':'minho_consumer'}"
+      count: "{{ ec2_consumer_count }}"
+      wait: true
+    register: ec2
+
+  - name: Launch end host for SYSTEMX
+    ec2:
+      access_key: "{{ ec2_access_key }}"
+      secret_key: "{{ ec2_secret_key }}"
+      keypair: "{{ ec2_keypair }}"
+      group: "{{ ec2_security_group }}"
+      type: "{{ ec2_instance_type }}"
+      image: "{{ ec2_image_systemx }}"
+      volumes:
+        - device_name: /dev/sda1
+          volume_type: gp2
+          volume_size: 20
+          delete_on_termination: true
+      region: "{{ ec2_region_systemx }}"
+      instance_tags: "{'host_gw':'{{ ec2_host_gw_systemx }}' ,'host_gw_prefix':'{{ ec2_host_gw_prefix_systemx }}' ,'ansible_group':'systemx_host', 'type':'{{ ec2_instance_type }}', 'group':'validated-image-consumer', 'Name':'systemx_consumer'}"
+      count: "{{ ec2_consumer_count }}"
+      wait: true
+    register: ec2
+
+  - name: Launch end host for LIP6
+    ec2:
+      access_key: "{{ ec2_access_key }}"
+      secret_key: "{{ ec2_secret_key }}"
+      keypair: "{{ ec2_keypair }}"
+      group: "{{ ec2_security_group }}"
+      type: "{{ ec2_instance_type }}"
+      image: "{{ ec2_image_lip6 }}"
+      volumes:
+        - device_name: /dev/sda1
+          volume_type: gp2
+          volume_size: 20
+          delete_on_termination: true
+      region: "{{ ec2_region_lip6 }}"
+      instance_tags: "{'host_gw':'{{ ec2_host_gw_lip6 }}' ,'host_gw_prefix':'{{ ec2_host_gw_prefix_lip6 }}' ,'ansible_group':'lip6_host', 'type':'{{ ec2_instance_type }}', 'group':'validated-image-consumer', 'Name':'lip6_consumer'}"
+      count: "{{ ec2_consumer_count }}"
+      wait: true
+    register: ec2
+
+  - name: Launch end host for TNO
+    ec2:
+      access_key: "{{ ec2_access_key }}"
+      secret_key: "{{ ec2_secret_key }}"
+      keypair: "{{ ec2_keypair }}"
+      group: "{{ ec2_security_group }}"
+      type: "{{ ec2_instance_type }}"
+      image: "{{ ec2_image_tno }}"
+      volumes:
+        - device_name: /dev/sda1
+          volume_type: gp2
+          volume_size: 20
+          delete_on_termination: true
+      region: "{{ ec2_region_tno }}"
+      instance_tags: "{'host_gw':'{{ ec2_host_gw_tno }}' ,'host_gw_prefix':'{{ ec2_host_gw_prefix_tno }}' ,'ansible_group':'tno_host', 'type':'{{ ec2_instance_type }}', 'group':'validated-image-consumer', 'Name':'tno_consumer'}"
+      count: "{{ ec2_consumer_count }}"
+      wait: true
+    register: ec2
+
+  - name: Launch end host for NTNU
+    ec2:
+      access_key: "{{ ec2_access_key }}"
+      secret_key: "{{ ec2_secret_key }}"
+      keypair: "{{ ec2_keypair }}"
+      group: "{{ ec2_security_group }}"
+      type: "{{ ec2_instance_type }}"
+      image: "{{ ec2_image_ntnu }}"
+      volumes:
+        - device_name: /dev/sda1
+          volume_type: gp2
+          volume_size: 20
+          delete_on_termination: true
+      region: "{{ ec2_region_ntnu }}"
+      instance_tags: "{'host_gw':'{{ ec2_host_gw_ntnu }}' ,'host_gw_prefix':'{{ ec2_host_gw_prefix_ntnu }}' ,'ansible_group':'ntnu_host', 'type':'{{ ec2_instance_type }}', 'group':'validated-image-consumer', 'Name':'ntnu_consumer'}"
+      count: "{{ ec2_consumer_count }}"
+      wait: true
+    register: ec2
+
+  - name: Launch end host for MSU
+    ec2:
+      access_key: "{{ ec2_access_key }}"
+      secret_key: "{{ ec2_secret_key }}"
+      keypair: "{{ ec2_keypair }}"
+      group: "{{ ec2_security_group }}"
+      type: "{{ ec2_instance_type }}"
+      image: "{{ ec2_image_msu }}"
+      volumes:
+        - device_name: /dev/sda1
+          volume_type: gp2
+          volume_size: 20
+          delete_on_termination: true
+      region: "{{ ec2_region_msu }}"
+      instance_tags: "{'host_gw':'{{ ec2_host_gw_msu }}' ,'host_gw_prefix':'{{ ec2_host_gw_prefix_msu }}' ,'ansible_group':'msu_host', 'type':'{{ ec2_instance_type }}', 'group':'validated-image-consumer', 'Name':'msu_consumer'}"
+      count: "{{ ec2_consumer_count }}"
+      wait: true
+    register: ec2
+
+#  - name: Launch end host for SRRU
+#    ec2:
+#      access_key: "{{ ec2_access_key }}"
+#      secret_key: "{{ ec2_secret_key }}"
+#      keypair: "{{ ec2_keypair }}"
+#      group: "{{ ec2_security_group }}"
+#      type: "{{ ec2_instance_type }}"
+#      image: "{{ ec2_image_srru }}"
+#      volumes:
+#        - device_name: /dev/sda1
+#          volume_type: gp2
+#          volume_size: 20
+#          delete_on_termination: true
+#      region: "{{ ec2_region_srru }}"
+#      instance_tags: "{'host_gw':'{{ ec2_host_gw_srru }}' ,'host_gw_prefix':'{{ ec2_host_gw_prefix_srru }}' ,'ansible_group':'srru_host', 'type':'{{ ec2_instance_type }}', 'group':'validated-image-consumer', 'Name':'srru_consumer'}"
+#      count: "{{ ec2_consumer_count }}"
+#      wait: true
+#    register: ec2
+
+  - name: Launch end host for INDONESIA
+    ec2:
+      access_key: "{{ ec2_access_key }}"
+      secret_key: "{{ ec2_secret_key }}"
+      keypair: "{{ ec2_keypair }}"
+      group: "{{ ec2_security_group }}"
+      type: "{{ ec2_instance_type }}"
+      image: "{{ ec2_image_indonesia }}"
+      volumes:
+        - device_name: /dev/sda1
+          volume_type: gp2
+          volume_size: 20
+          delete_on_termination: true
+      region: "{{ ec2_region_indonesia }}"
+      instance_tags: "{'host_gw':'{{ ec2_host_gw_indonesia }}' ,'host_gw_prefix':'{{ ec2_host_gw_prefix_indonesia }}' ,'ansible_group':'indonesia_host', 'type':'{{ ec2_instance_type }}', 'group':'validated-image-consumer', 'Name':'indonesia_consumer'}"
+      count: "{{ ec2_consumer_count }}"
+      wait: true
+    register: ec2
+
+#  - name: Launch end host for CNIC
+#    ec2:
+#      access_key: "{{ ec2_access_key }}"
+#      secret_key: "{{ ec2_secret_key }}"
+#      keypair: "{{ ec2_keypair }}"
+#      group: "{{ ec2_security_group }}"
+#      type: "{{ ec2_instance_type }}"
+#      image: "{{ ec2_image_cnic }}"
+#      volumes:
+#        - device_name: /dev/sda1
+#          volume_type: gp2
+#          volume_size: 20
+#          delete_on_termination: true
+#      region: "{{ ec2_region_cnic }}"
+#      instance_tags: "{'host_gw':'{{ ec2_host_gw_cnic }}' ,'host_gw_prefix':'{{ ec2_host_gw_prefix_cnic }}' ,'ansible_group':'cnic_host', 'type':'{{ ec2_instance_type }}', 'group':'validated-image-consumer', 'Name':'cnic_consumer'}"
+#      count: "{{ ec2_consumer_count }}"
+#      wait: true
+#    register: ec2
+
+#  - name: Launch end host for BUPT
+#    ec2:
+#      access_key: "{{ ec2_access_key }}"
+#      secret_key: "{{ ec2_secret_key }}"
+#      keypair: "{{ ec2_keypair }}"
+#      group: "{{ ec2_security_group }}"
+#      type: "{{ ec2_instance_type }}"
+#      image: "{{ ec2_image_bupt }}"
+#      volumes:
+#        - device_name: /dev/sda1
+#          volume_type: gp2
+#          volume_size: 20
+#          delete_on_termination: true
+#      region: "{{ ec2_region_bupt }}"
+#      instance_tags: "{'host_gw':'{{ ec2_host_gw_bupt }}' ,'host_gw_prefix':'{{ ec2_host_gw_prefix_bupt }}' ,'ansible_group':'bupt_host', 'type':'{{ ec2_instance_type }}', 'group':'validated-image-consumer', 'Name':'bupt_consumer'}"
+#      count: "{{ ec2_consumer_count }}"
+#      wait: true
+#    register: ec2
+
+  - name: Launch end host for PKUSZ
+    ec2:
+      access_key: "{{ ec2_access_key }}"
+      secret_key: "{{ ec2_secret_key }}"
+      keypair: "{{ ec2_keypair }}"
+      group: "{{ ec2_security_group }}"
+      type: "{{ ec2_instance_type }}"
+      image: "{{ ec2_image_pkusz }}"
+      volumes:
+        - device_name: /dev/sda1
+          volume_type: gp2
+          volume_size: 20
+          delete_on_termination: true
+      region: "{{ ec2_region_pkusz }}"
+      instance_tags: "{'host_gw':'{{ ec2_host_gw_pkusz }}' ,'host_gw_prefix':'{{ ec2_host_gw_prefix_pkusz }}' ,'ansible_group':'pkusz_host', 'type':'{{ ec2_instance_type }}', 'group':'validated-image-consumer', 'Name':'pkusz_consumer'}"
+      count: "{{ ec2_consumer_count }}"
+      wait: true
+    register: ec2
+
+#  - name: Launch end host for TONGJI
+#    ec2:
+#      access_key: "{{ ec2_access_key }}"
+#      secret_key: "{{ ec2_secret_key }}"
+#      keypair: "{{ ec2_keypair }}"
+#      group: "{{ ec2_security_group }}"
+#      type: "{{ ec2_instance_type }}"
+#      image: "{{ ec2_image_tongji }}"
+#      volumes:
+#        - device_name: /dev/sda1
+#          volume_type: gp2
+#          volume_size: 20
+#          delete_on_termination: true
+#      region: "{{ ec2_region_tongji }}"
+#      instance_tags: "{'host_gw':'{{ ec2_host_gw_tongji }}' ,'host_gw_prefix':'{{ ec2_host_gw_prefix_tongji }}' ,'ansible_group':'tongji_host', 'type':'{{ ec2_instance_type }}', 'group':'validated-image-consumer', 'Name':'tongji_consumer'}"
+#      count: "{{ ec2_consumer_count }}"
+#      wait: true
+#    register: ec2
+
+#  - name: Launch end host for WASEDA
+#    ec2:
+#      access_key: "{{ ec2_access_key }}"
+#      secret_key: "{{ ec2_secret_key }}"
+#      keypair: "{{ ec2_keypair }}"
+#      group: "{{ ec2_security_group }}"
+#      type: "{{ ec2_instance_type }}"
+#      image: "{{ ec2_image_waseda }}"
+#      volumes:
+#        - device_name: /dev/sda1
+#          volume_type: gp2
+#          volume_size: 20
+#          delete_on_termination: true
+#      region: "{{ ec2_region_waseda }}"
+#      instance_tags: "{'host_gw':'{{ ec2_host_gw_waseda }}' ,'host_gw_prefix':'{{ ec2_host_gw_prefix_waseda }}' ,'ansible_group':'waseda_host', 'type':'{{ ec2_instance_type }}', 'group':'validated-image-consumer', 'Name':'waseda_consumer'}"
+#      count: "{{ ec2_consumer_count }}"
+#      wait: true
+#    register: ec2
+
+  - name: Launch end host for OSAKA
+    ec2:
+      access_key: "{{ ec2_access_key }}"
+      secret_key: "{{ ec2_secret_key }}"
+      keypair: "{{ ec2_keypair }}"
+      group: "{{ ec2_security_group }}"
+      type: "{{ ec2_instance_type }}"
+      image: "{{ ec2_image_osaka }}"
+      volumes:
+        - device_name: /dev/sda1
+          volume_type: gp2
+          volume_size: 20
+          delete_on_termination: true
+      region: "{{ ec2_region_osaka }}"
+      instance_tags: "{'host_gw':'{{ ec2_host_gw_osaka }}' ,'host_gw_prefix':'{{ ec2_host_gw_prefix_osaka }}' ,'ansible_group':'osaka_host', 'type':'{{ ec2_instance_type }}', 'group':'validated-image-consumer', 'Name':'osaka_consumer'}"
+      count: "{{ ec2_consumer_count }}"
+      wait: true
+    register: ec2
+
+  - name: Launch end host for KISTI
+    ec2:
+      access_key: "{{ ec2_access_key }}"
+      secret_key: "{{ ec2_secret_key }}"
+      keypair: "{{ ec2_keypair }}"
+      group: "{{ ec2_security_group }}"
+      type: "{{ ec2_instance_type }}"
+      image: "{{ ec2_image_kisti }}"
+      volumes:
+        - device_name: /dev/sda1
+          volume_type: gp2
+          volume_size: 20
+          delete_on_termination: true
+      region: "{{ ec2_region_kisti }}"
+      instance_tags: "{'host_gw':'{{ ec2_host_gw_kisti }}' ,'host_gw_prefix':'{{ ec2_host_gw_prefix_kisti }}' ,'ansible_group':'kisti_host', 'type':'{{ ec2_instance_type }}', 'group':'validated-image-consumer', 'Name':'kisti_consumer'}"
+      count: "{{ ec2_consumer_count }}"
+      wait: true
+    register: ec2
+
+#  - name: Launch end host for ANYANG
+#    ec2:
+#      access_key: "{{ ec2_access_key }}"
+#      secret_key: "{{ ec2_secret_key }}"
+#      keypair: "{{ ec2_keypair }}"
+#      group: "{{ ec2_security_group }}"
+#      type: "{{ ec2_instance_type }}"
+#      image: "{{ ec2_image_anyang }}"
+#      volumes:
+#        - device_name: /dev/sda1
+#          volume_type: gp2
+#          volume_size: 20
+#          delete_on_termination: true
+#      region: "{{ ec2_region_anyang }}"
+#      instance_tags: "{'host_gw':'{{ ec2_host_gw_anyang }}' ,'host_gw_prefix':'{{ ec2_host_gw_prefix_anyang }}' ,'ansible_group':'anyang_host', 'type':'{{ ec2_instance_type }}', 'group':'validated-image-consumer', 'Name':'anyang_consumer'}"
+#      count: "{{ ec2_consumer_count }}"
+#      wait: true
+#    register: ec2
 
   - name: Wait for SSH to come up
     wait_for:

@@ -27,3 +27,22 @@ ansible-playbook -u ubuntu --ssh-extra-args="-i ~/.ssh/aws_wu_jdd.pem -o \"Stric
 ansible-playbook -u ubuntu --ssh-extra-args="-i ~/.ssh/aws_wu_jdd.pem -o \"StrictHostKeyChecking no\"" --ask-vault-pass -i inventory --extra-vars "suffix=123" runDemoChunks.yml
 
 ansible-playbook -u ubuntu --ssh-extra-args="-i ~/.ssh/aws_wu_jdd.pem -o \"StrictHostKeyChecking no\"" --ask-vault-pass -i inventory killChunks.yml
+
+VALIDATION commands
+Launch:
+ansible-playbook --ask-vault-pass launch-validation.yml
+Configure:
+ansible-playbook -u ubuntu --ssh-extra-args="-i ~/.ssh/aws_wu_jdd.pem -o \"StrictHostKeyChecking no\"" --ask-vault-pass -i inventory configure-with-ami-validation.yml
+# the follwing command is in the runValidationDemo.sh script
+#ansible-playbook -u ubuntu --ssh-extra-args="-i ~/.ssh/aws_wu_jdd.pem -o \"StrictHostKeyChecking no\"" --ask-vault-pass -i inventory --extra-vars "suffix=123" runDemoValidation.yml
+Run:
+./runValidationDemo.sh <suffix same for below>
+./runLaptopDemo.sh <suffix same as above>
+
+example:
+./runValidation.sh 1234
+./runLaptopDemo.sh 1234
+
+
+Terminate:
+ansible-playbook -u ubuntu --ssh-extra-args="-i ~/.ssh/aws_wu_jdd.pem -o \"StrictHostKeyChecking no\"" --ask-vault-pass -i inventory terminate.yml
