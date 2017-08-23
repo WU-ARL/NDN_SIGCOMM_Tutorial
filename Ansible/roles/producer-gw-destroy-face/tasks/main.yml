@@ -1,0 +1,14 @@
+---
+# tasks file for producer-gw-destroy-face
+
+- name: copy nfdc command destroy face script to WU
+  copy: dest=/home/ndnops/nfdcCommand_destroy.sh src=roles/producer-gw/files/nfdcCommand_destroy.sh owner=ndnops mode=755
+  when: inventory_hostname == "WU"
+
+- name: run nfdc command destory face script on WU
+  shell: ./nfdcCommand_destroy.sh 
+  args: 
+    chdir: /home/ndnops
+  when: inventory_hostname == "WU"
+
+

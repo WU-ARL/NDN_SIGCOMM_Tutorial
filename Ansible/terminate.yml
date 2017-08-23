@@ -2,6 +2,11 @@
 ## This playbook terminates all instances
 
 # Apply common configuration to all hosts
+- name: remove face on WU gw for producers
+  hosts: WU
+  roles:
+  - {role: 'producer-gw-destroy-face', tags 'producer-gw-destroy-face'} 
+
 - name: terminate tagged instances
   hosts: all
   tasks:
