@@ -1,0 +1,11 @@
+---
+## This playbook deploys the whole application stack in this site.  
+
+# Apply common configuration to all hosts
+- hosts: all
+  
+  roles:
+  - {role: 'producer-gw', tags: 'producer-gw'}   # to use the tag, use this option: --tags "producer-gw"
+  - {role: 'demo_validation_producers', tags: 'demo_validation_producers'}  # to use the tag, use this option: --tags "demo_validation_producers"
+
+
