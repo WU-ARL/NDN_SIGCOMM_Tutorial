@@ -10,5 +10,6 @@
   args: 
     chdir: /home/ndnops
   when: inventory_hostname == "WU"
+  ignore_errors: yes
 
 
